@@ -13,10 +13,8 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@DiscriminatorValue(value = "Technicien")
 public class Technicien extends Personne{
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
 
     @OneToMany(mappedBy = "technicien")
     private List<TicketSupport> tickets;

@@ -11,11 +11,10 @@ import java.time.LocalDateTime;
 @Data
 public class TicketSupportDTO {
 
-
     private Long id;
     private String description;
     private LocalDateTime dateCreation;
     private EtatTicket etat;
-    private TechnicienDTO technicien;
-    private UtilisateurDTO utilisateur;
+    private TechnicienDTO technicienId;
+    private UtilisateurDTO utilisateurId;
 }

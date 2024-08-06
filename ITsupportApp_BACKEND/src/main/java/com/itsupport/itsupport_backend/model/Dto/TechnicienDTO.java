@@ -10,12 +10,6 @@ import java.util.List;
 
 
 @Data
-public class TechnicienDTO {
-
-    private Long id;
-    private String username;
-    private String email;
-    private String motdepasse;
-    @JsonIgnore
+public class TechnicienDTO extends PersonneDTO {
     private List<TicketSupportDTO> tickets;
 }
