@@ -11,7 +11,7 @@ public interface AdministrateurMapper{
 
     Administrateur toEntity(AdministrateurDTO DTO);
     AdministrateurDTO toDTO(Administrateur entity);
-    List<AdministrateurDTO> toDTOList(List<Administrateur> users);
-    List<Administrateur> toEntityList(List<AdministrateurDTO> userDTOs);
+    List<AdministrateurDTO> toDTOList(List<Administrateur> administrateurs);
+    List<Administrateur> toEntityList(List<AdministrateurDTO> DTOs);
 
 }
