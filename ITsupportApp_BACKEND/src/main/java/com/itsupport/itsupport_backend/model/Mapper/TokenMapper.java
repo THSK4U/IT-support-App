@@ -13,7 +13,7 @@ public interface TokenMapper {
 
     Token toEntity(TokenDTO DTO);
     TokenDTO toDTO(Token entity);
-    List<TokenDTO> toDTOList(List<Token> users);
-    List<Token> toEntityList(List<TokenDTO> userDTOs);
+    List<TokenDTO> toDTOList(List<Token> tokens);
+    List<Token> toEntityList(List<TokenDTO> DTOs);
 
 }
