@@ -17,8 +17,11 @@ public class EquipementDTO {
     private Long id;
     private String nom;
     private String description;
-    private EtatEquipement Etet;
+    private String imageUrl;
+    private String serialnumber;
+    private EtatEquipement etat;
     private LocalDateTime dateAcquisition;
     @JsonIgnore
     private List<TicketSupport> ticketSupports;
+
 }

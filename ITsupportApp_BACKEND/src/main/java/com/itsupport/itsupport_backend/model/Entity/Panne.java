@@ -20,7 +20,7 @@ public class Panne {
 
     private String nom;
     private String description;
-    @OneToMany
+    @OneToMany(mappedBy = "panne",cascade = CascadeType.ALL)
     @JsonIgnore
     private List<TicketSupport> ticketSupports;
 }

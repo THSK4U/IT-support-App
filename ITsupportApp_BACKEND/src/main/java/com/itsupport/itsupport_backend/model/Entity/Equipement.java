@@ -6,7 +6,6 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.boot.autoconfigure.web.WebProperties;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -21,8 +20,11 @@ public class Equipement {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nom;
+    private String imageurl;
+    private String serialnumber;
     private String description;
-    private EtatEquipement Etet;
+    @Enumerated(EnumType.STRING)
+    private EtatEquipement Etat;
     @Column(updatable = false)
     private LocalDateTime dateAcquisition;
 
@@ -31,7 +33,7 @@ public class Equipement {
         dateAcquisition = LocalDateTime.now();
     }
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "equipement",cascade = CascadeType.ALL)
     @JsonIgnore
     private List<TicketSupport> ticketSupports;
 }
