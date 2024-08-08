@@ -38,4 +38,12 @@ public class TicketSupport {
     @ManyToOne
     @JoinColumn(name = "utilisateur_id")
     private Utilisateur utilisateur;
+
+    @ManyToOne
+    @JoinColumn(name = "panne_id")
+    private Panne panne;
+
+    @ManyToOne
+    @JoinColumn(name = "equipement_id")
+    private Equipement equipement;
 }

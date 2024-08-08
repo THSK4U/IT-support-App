@@ -12,6 +12,6 @@ public interface TicketSupportMapper {
 
     TicketSupport toEntity(TicketSupportDTO DTO);
     TicketSupportDTO toDTO(TicketSupport entity);
-    List<TicketSupportDTO> toDTOList(List<TicketSupport> users);
-    List<TicketSupport> toEntityList(List<TicketSupportDTO> userDTOs);
+    List<TicketSupportDTO> toDTOList(List<TicketSupport> Ticket);
+    List<TicketSupport> toEntityList(List<TicketSupportDTO> DTOs);
 }
