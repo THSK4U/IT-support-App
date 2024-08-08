@@ -6,7 +6,6 @@ import com.itsupport.itsupport_backend.model.Entity.Technicien;
 import com.itsupport.itsupport_backend.model.Entity.Utilisateur;
 import com.itsupport.itsupport_backend.model.Enum.EtatTicket;
 
-import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDateTime;

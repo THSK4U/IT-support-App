@@ -17,9 +17,6 @@ public class PanneController implements IPanneApi {
     @Autowired
     private IPanneService panneService;
 
-    @Autowired
-    private PanneMapper Mapper;
-
     @Override
     public PanneDTO create(PanneDTO DTO) {
         return panneService.create(DTO);
