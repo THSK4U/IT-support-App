@@ -33,23 +33,27 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
         return http
-                //1
+                //1 Désactive la protection CSRF
                 .csrf(AbstractHttpConfigurer::disable)
-                //2
+                //2 Configure les règles d'autorisation des requêtes HTTP
                 .authorizeHttpRequests(
-                        req->req.requestMatchers("/**")
-                                .permitAll()
-//                                .requestMatchers("/api/event/admin/**").hasAuthority("ADMIN")
-//                                .anyRequest()
-//                                .authenticated()
+                        req->req
+                        .requestMatchers("/login/**").permitAll()
+                        .requestMatchers("/admin/**","/all/**", "/tech/**").permitAll()
+
+                        .requestMatchers("/technician/**", "/tech/**").hasAuthority("TECH")
+
+                        .requestMatchers("/user/**","/all/**").hasAuthority("USER")
+                    // Exige une authentification pour toute autre requête non spécifiée
+                        .anyRequest().authenticated()
                 )
                 //3
                 .userDetailsService(ServiceImp)
-                //4
+                //4 Configure la gestion des sessions
                 .sessionManagement(session->session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                //5
+                //5 Ajoute un filtre personnalisé JWT
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
-                //6
+                //6  Gère les exceptions
                 .exceptionHandling(
                         e->e.accessDeniedHandler(
                                         (request, response, accessDeniedException)->response.setStatus(403)

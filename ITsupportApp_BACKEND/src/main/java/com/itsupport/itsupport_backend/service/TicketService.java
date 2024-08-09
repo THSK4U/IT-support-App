@@ -66,4 +66,18 @@ public class TicketService implements ITicketService {
             return null;
         }
     }
+
+    @Override
+    public TicketSupportDTO updateEtat(Long id, TicketSupportDTO DTO) {
+        Optional<TicketSupport> optional = Repository.findById(id);
+        if (optional.isPresent()) {
+            TicketSupport ticket = optional.get();
+            ticket.setEtat(DTO.getEtat());
+
+            TicketSupport updated = Repository.save(ticket);
+            return Mapper.toDTO(updated);
+        } else {
+            return null;
+        }
+    }
 }

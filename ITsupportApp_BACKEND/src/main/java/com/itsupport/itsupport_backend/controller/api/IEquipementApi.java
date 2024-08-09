@@ -6,8 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-import static com.itsupport.itsupport_backend.controller.utils.Constants.APP_ADMIN;
-import static com.itsupport.itsupport_backend.controller.utils.Constants.APP_USER;
+import static com.itsupport.itsupport_backend.controller.utils.Constants.*;
 
 public interface IEquipementApi {
 
@@ -17,7 +16,7 @@ public interface IEquipementApi {
     @DeleteMapping(value = APP_ADMIN + "/Equipement/delete/{id}")
     void delete(@PathVariable("id") Long id);
 
-    @GetMapping(value = "/Equipement", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = APP_ADMIN_USER + "/Equipement", produces = MediaType.APPLICATION_JSON_VALUE)
     List<EquipementDTO> getAll();
 
     @GetMapping(value = APP_ADMIN + "/Equipement/{id}", produces = MediaType.APPLICATION_JSON_VALUE)

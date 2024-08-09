@@ -7,5 +7,7 @@ public interface IAuthenticationService {
 
     AuthenticationResponse registerTechnicien(Technicien request);
 
+    AuthenticationResponse registerAdmin(Administrateur request);
+
     AuthenticationResponse authenticate(Personne request);
 }

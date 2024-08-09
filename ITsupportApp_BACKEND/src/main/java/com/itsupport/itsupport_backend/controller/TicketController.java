@@ -43,4 +43,7 @@ public class TicketController implements ITicketApi {
     public TicketSupportDTO update(Long id, TicketSupportDTO DTO) {
         return Service.update(id, DTO);
     }
+
+    @Override
+    public TicketSupportDTO updateEtat(Long id, TicketSupportDTO DTO) { return Service.updateEtat(id, DTO); }
 }

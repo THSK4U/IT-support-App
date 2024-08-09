@@ -10,4 +10,6 @@ public interface ITicketService {
     List<TicketSupportDTO> getAll();
     TicketSupportDTO update(Long id, TicketSupportDTO DTO);
     void delete(Long id);
+    TicketSupportDTO updateEtat(Long id, TicketSupportDTO DTO);
+
 }
