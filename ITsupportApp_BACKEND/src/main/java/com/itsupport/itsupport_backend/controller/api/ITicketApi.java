@@ -8,10 +8,11 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 import static com.itsupport.itsupport_backend.controller.utils.Constants.APP_ADMIN;
+import static com.itsupport.itsupport_backend.controller.utils.Constants.APP_USER;
 
 public interface ITicketApi {
 
-    @PostMapping(value = APP_ADMIN + "/Ticket/create", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value =  APP_USER +"/Ticket/create", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     TicketSupportDTO create(@RequestBody TicketSupportDTO DTO);
 
     @DeleteMapping(value = APP_ADMIN + "/Ticket/delete/{id}")

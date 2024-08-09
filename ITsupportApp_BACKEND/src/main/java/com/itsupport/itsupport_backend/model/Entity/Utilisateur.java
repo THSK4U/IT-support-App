@@ -1,5 +1,6 @@
 package com.itsupport.itsupport_backend.model.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -16,5 +17,6 @@ import java.util.List;
 public class Utilisateur extends Personne{
 
     @OneToMany(mappedBy = "utilisateur")
+    @JsonIgnore
     private List<TicketSupport> tickets;
 }

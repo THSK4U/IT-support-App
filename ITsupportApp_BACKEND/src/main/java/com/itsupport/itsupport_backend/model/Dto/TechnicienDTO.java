@@ -11,5 +11,6 @@ import java.util.List;
 
 @Data
 public class TechnicienDTO extends PersonneDTO {
+    @JsonIgnore
     private List<TicketSupportDTO> tickets;
 }

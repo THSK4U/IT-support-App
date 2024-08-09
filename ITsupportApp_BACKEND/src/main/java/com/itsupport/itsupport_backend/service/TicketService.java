@@ -2,6 +2,7 @@ package com.itsupport.itsupport_backend.service;
 
 import com.itsupport.itsupport_backend.model.Dto.TicketSupportDTO;
 import com.itsupport.itsupport_backend.model.Entity.TicketSupport;
+import com.itsupport.itsupport_backend.model.Enum.EtatTicket;
 import com.itsupport.itsupport_backend.model.Mapper.TicketSupportMapper;
 import com.itsupport.itsupport_backend.repository.TicketRepository;
 import com.itsupport.itsupport_backend.service.Interface.ITicketService;
@@ -24,6 +25,7 @@ public class TicketService implements ITicketService {
     @Override
     public TicketSupportDTO create(TicketSupportDTO DTO) {
         TicketSupport entity = Mapper.toEntity(DTO);
+        entity.setEtat(EtatTicket.A_FAIRE);
         TicketSupport saved = Repository.save(entity);
         return Mapper.toDTO(saved);
     }
