@@ -5,10 +5,7 @@ import com.itsupport.itsupport_backend.model.Enum.Role;
 import com.itsupport.itsupport_backend.model.Mapper.PersonneMapper;
 import com.itsupport.itsupport_backend.model.Mapper.TechnicienMapper;
 import com.itsupport.itsupport_backend.model.Mapper.UtilisateurMapper;
-import com.itsupport.itsupport_backend.repository.PersonneRepository;
-import com.itsupport.itsupport_backend.repository.TechnicienRepository;
-import com.itsupport.itsupport_backend.repository.TokenRepository;
-import com.itsupport.itsupport_backend.repository.UtilisateurRepository;
+import com.itsupport.itsupport_backend.repository.*;
 import com.itsupport.itsupport_backend.service.Interface.IAuthenticationService;
 import com.itsupport.itsupport_backend.service.securityService.JwtService;
 import lombok.RequiredArgsConstructor;
@@ -28,6 +25,7 @@ public class AuthenticationService implements IAuthenticationService {
     private final UtilisateurRepository utilisateurRepository;
     private final TechnicienRepository technicienRepository;
     private final TokenRepository tokenRepository;
+    private final AdministrateurRepository administrateurRepository;
 //
         //Mapper
     private final PersonneMapper userMapper;
@@ -84,6 +82,23 @@ public class AuthenticationService implements IAuthenticationService {
     }
 
     @Override
+    public AuthenticationResponse registerAdmin(Administrateur request) {
+
+        Administrateur user = new Administrateur();
+        user.setUsername(request.getUsername());
+        user.setEmail(request.getEmail());
+        user.setPassword(passwordEncoder.encode(request.getPassword()));
+        user.setRole(Role.valueOf("ADMIN"));
+
+        user = administrateurRepository.save(user);
+
+        String jwt = jwtService.generateToken(user);
+
+        saveUserToken(jwt, user);
+
+        return new AuthenticationResponse(jwt, "Administrateur registration was successful");
+    }
+    @Override
     public AuthenticationResponse authenticate(Personne request) {
         authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
@@ -97,7 +112,7 @@ public class AuthenticationService implements IAuthenticationService {
 
         saveUserToken(jwt, user);
 
-        return new AuthenticationResponse(jwt, "User login was successful");
+        return new AuthenticationResponse(jwt, "login was successful");
     }
 
 
