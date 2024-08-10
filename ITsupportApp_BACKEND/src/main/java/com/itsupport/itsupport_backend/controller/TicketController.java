@@ -9,6 +9,7 @@ import com.itsupport.itsupport_backend.model.Mapper.TicketSupportMapper;
 import com.itsupport.itsupport_backend.service.Interface.IEquipementService;
 import com.itsupport.itsupport_backend.service.Interface.ITicketService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -46,4 +47,9 @@ public class TicketController implements ITicketApi {
 
     @Override
     public TicketSupportDTO updateEtat(Long id, TicketSupportDTO DTO) { return Service.updateEtat(id, DTO); }
+
+    @Override
+    public List<TicketSupportDTO> getTicketsByUsername(String username) { return Service.findAllByUsername(username);}
+
+
 }

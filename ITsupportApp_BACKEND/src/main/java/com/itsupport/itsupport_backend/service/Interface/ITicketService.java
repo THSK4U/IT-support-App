@@ -11,5 +11,6 @@ public interface ITicketService {
     TicketSupportDTO update(Long id, TicketSupportDTO DTO);
     void delete(Long id);
     TicketSupportDTO updateEtat(Long id, TicketSupportDTO DTO);
+    List<TicketSupportDTO> findAllByUsername(String query);
 
 }

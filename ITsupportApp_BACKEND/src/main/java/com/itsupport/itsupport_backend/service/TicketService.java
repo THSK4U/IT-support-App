@@ -37,8 +37,8 @@ public class TicketService implements ITicketService {
 
     @Override
     public List<TicketSupportDTO> getAll() {
-        List<TicketSupport> techniciens = Repository.findAll();
-        return techniciens.stream()
+        List<TicketSupport> Ticket = Repository.findAll();
+        return Ticket.stream()
                 .map(Mapper::toDTO)
                 .collect(Collectors.toList());
     }
@@ -80,4 +80,16 @@ public class TicketService implements ITicketService {
             return null;
         }
     }
+
+    @Override
+    public List<TicketSupportDTO> findAllByUsername(String username) {
+        List<TicketSupport> tickets = Repository.findByUtilisateurUsername(username);
+        return tickets.stream()
+                .map(Mapper::toDTO)
+                .collect(Collectors.toList());
+    }
+
+
+
+
 }

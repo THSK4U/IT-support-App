@@ -28,4 +28,7 @@ public interface ITicketApi {
 
     @PutMapping(value = APP_ADMIN_TECH + "/Ticket/updateetat/{id}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     TicketSupportDTO updateEtat(@PathVariable("id") Long id, @RequestBody TicketSupportDTO DTO);
+
+    @GetMapping(value = APP_USER + "/{username}", produces = MediaType.APPLICATION_JSON_VALUE)
+    List<TicketSupportDTO> getTicketsByUsername(@PathVariable String username);
 }
