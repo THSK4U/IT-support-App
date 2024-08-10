@@ -43,11 +43,11 @@ public class SecurityConfig {
                 .authorizeHttpRequests(
                         req->req
                         .requestMatchers("/login/**", "/**").permitAll()
-//                        .requestMatchers("/admin/**","/all/**", "/tech/**").permitAll()
+//                        .requestMatchers("/admin/**","/adminuser/**", "/admintech/**").hasAuthority("ADMIN")
 //
-//                        .requestMatchers("/technician/**", "/tech/**").hasAuthority("TECH")
+//                        .requestMatchers("/technician/**", "/admintech/**").hasAuthority("TECH")
 //
-//                        .requestMatchers("/user/**","/all/**").hasAuthority("USER")
+//                        .requestMatchers("/user/**","/adminuser/**").hasAuthority("USER")
 //                    // Exige une authentification pour toute autre requête non spécifiée
 //                        .anyRequest().authenticated()
                 )
