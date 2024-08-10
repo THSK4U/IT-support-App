@@ -6,6 +6,8 @@ import com.itsupport.itsupport_backend.service.PersonneService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
@@ -19,6 +21,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.HttpStatusEntryPoint;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 @EnableWebSecurity
@@ -38,14 +42,14 @@ public class SecurityConfig {
                 //2 Configure les règles d'autorisation des requêtes HTTP
                 .authorizeHttpRequests(
                         req->req
-                        .requestMatchers("/login/**").permitAll()
-                        .requestMatchers("/admin/**","/all/**", "/tech/**").permitAll()
-
-                        .requestMatchers("/technician/**", "/tech/**").hasAuthority("TECH")
-
-                        .requestMatchers("/user/**","/all/**").hasAuthority("USER")
-                    // Exige une authentification pour toute autre requête non spécifiée
-                        .anyRequest().authenticated()
+                        .requestMatchers("/login/**", "/**").permitAll()
+//                        .requestMatchers("/admin/**","/all/**", "/tech/**").permitAll()
+//
+//                        .requestMatchers("/technician/**", "/tech/**").hasAuthority("TECH")
+//
+//                        .requestMatchers("/user/**","/all/**").hasAuthority("USER")
+//                    // Exige une authentification pour toute autre requête non spécifiée
+//                        .anyRequest().authenticated()
                 )
                 //3
                 .userDetailsService(ServiceImp)
@@ -75,4 +79,19 @@ public class SecurityConfig {
         return configuration.getAuthenticationManager();
     }
 
+    @Bean
+    public WebMvcConfigurer corsConfig() {
+        return new WebMvcConfigurer() {
+            @Override
+            public void addCorsMappings(CorsRegistry registry) {
+                registry.addMapping("/**")
+                        .allowedOrigins("http://localhost:4200")
+                        .allowedMethods(HttpMethod.GET.name(),
+                                HttpMethod.POST.name(),
+                                HttpMethod.DELETE.name())
+                        .allowedHeaders(HttpHeaders.CONTENT_TYPE,
+                                HttpHeaders.AUTHORIZATION);
+            }
+        };
+    }
 }
