@@ -4,11 +4,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardAdminComponent } from './dashboard-admin/dashboard-admin.component';
+import { TechnicienComponent } from './dashboard-admin/technicien/technicien.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardAdminComponent
+    DashboardAdminComponent,
+    TechnicienComponent
   ],
   imports: [
     BrowserModule,
