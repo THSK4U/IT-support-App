@@ -12,6 +12,8 @@ import {FormsModule} from "@angular/forms";
 import { FormAjoutertechnicienComponent } from './technicien/form-ajoutertechnicien/form-ajoutertechnicien.component';
 import { UtilisateurComponent } from './utilisateur/utilisateur.component';
 import { ListUtilisateurComponent } from './utilisateur/list-utilisateur/list-utilisateur.component';
+import { FormAjouterutilisateurComponent } from './utilisateur/form-ajouterutilisateur/form-ajouterutilisateur.component';
+import { PanneComponent } from './panne/panne.component';
 
 
 
@@ -26,6 +28,8 @@ import { ListUtilisateurComponent } from './utilisateur/list-utilisateur/list-ut
     FormAjoutertechnicienComponent,
     UtilisateurComponent,
     ListUtilisateurComponent,
+    FormAjouterutilisateurComponent,
+    PanneComponent,
 
   ],
   exports: [
