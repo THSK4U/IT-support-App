@@ -9,6 +9,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { StatistiqueComponent } from './statistique/statistique.component';
 import { ListTechnicienComponent } from './technicien/list-technicien/list-technicien.component';
 import {FormsModule} from "@angular/forms";
+import { FormAjoutertechnicienComponent } from './technicien/form-ajoutertechnicien/form-ajoutertechnicien.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import {FormsModule} from "@angular/forms";
     NavbarComponent,
     SidebarComponent,
     StatistiqueComponent,
-    ListTechnicienComponent
+    ListTechnicienComponent,
+    FormAjoutertechnicienComponent
   ],
   exports: [
     DashboardAdminComponent,

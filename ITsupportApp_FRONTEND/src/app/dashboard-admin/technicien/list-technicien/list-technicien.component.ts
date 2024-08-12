@@ -13,7 +13,6 @@ export class ListTechnicienComponent implements OnInit {
 
   techniciens: Technicien[] = [];
   showButton: boolean = false;
-  isFormVisible: boolean = false;
 
 
   constructor(
@@ -42,8 +41,5 @@ export class ListTechnicienComponent implements OnInit {
     this.showButton = url.includes('/Admin/Technicien');
   }
 
-  toggleForm() {
-      this.isFormVisible = !this.isFormVisible;
-    }
 
 }

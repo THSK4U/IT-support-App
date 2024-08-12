@@ -35,33 +35,3 @@
   </div>
 </div>
 </div>
-
-
-<!-- Add/Edit Ticket Button -->
-<button class="btn btn-primary mt-3" (click)="toggleForm()">Add new ticket</button>
-<!-- Ticket Form -->
-<div class="card mt-4 custom-card" *ngIf="isFormVisible">
-  <div class="card-body">
-    <h5 class="card-title">Add new ticket</h5>
-    <form>
-      <div class="mb-3">
-        <label for="description" class="form-label">Description:</label>
-        <input type="text" class="form-control" id="description" [(ngModel)]="techniciens" name="description">
-      </div>
-      <div class="mb-3">
-        <label for="utilisateur" class="form-label">User ID:</label>
-        <input type="number" class="form-control" id="utilisateur" [(ngModel)]="ticket.utilisateur.id" name="utilisateur">
-      </div>
-      <div class="mb-3">
-        <label for="panne" class="form-label">Panne :</label>
-        <input type="number" class="form-control" id="panne" [(ngModel)]="ticket.panne.id" name="panne">
-      </div>
-      <div class="mb-3">
-        <label for="equipement" class="form-label">Equipment ID:</label>
-        <input type="number" class="form-control" id="equipement" [(ngModel)]="ticket.equipement.id" name="equipement">
-      </div>
-      <button type="button" class="btn btn-primary" (click)="saveTicket()">Save</button>
-      <button type="button" class="btn btn-secondary" (click)="toggleForm()">Cancel</button>
-    </form>
-  </div>
-</div>

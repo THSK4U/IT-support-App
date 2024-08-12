@@ -1,0 +1,15 @@
+<div class="card-body">
+  <form>
+    <div class="mb-3">
+      <label for="nom" class="form-label">nom:</label>
+      <input type="text" class="form-control" id="nom" [(ngModel)]="techniciens" name="nom">
+    </div>
+
+    <div class="mb-3">
+      <label for="Description" class="form-label">Description :</label>
+      <input type="number" class="form-control" id="Description" [(ngModel)]="techniciens" name="Description">
+    </div>
+
+    <button type="button" class="btn btn-outline-success" (click)="save()">Save</button>
+  </form>
+</div>
