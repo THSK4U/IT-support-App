@@ -6,26 +6,25 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { PanneDto } from '../../models/panne-dto';
 
-export interface GetById$Params {
+export interface DeleteTicket$Params {
   id: number;
 }
 
-export function getById(http: HttpClient, rootUrl: string, params: GetById$Params, context?: HttpContext): Observable<StrictHttpResponse<PanneDto>> {
-  const rb = new RequestBuilder(rootUrl, getById.PATH, 'get');
+export function deleteTicket(http: HttpClient, rootUrl: string, params: DeleteTicket$Params, context?: HttpContext): Observable<StrictHttpResponse<void>> {
+  const rb = new RequestBuilder(rootUrl, deleteTicket.PATH, 'delete');
   if (params) {
     rb.path('id', params.id, {});
   }
 
   return http.request(
-    rb.build({ responseType: 'json', accept: 'application/json', context })
+    rb.build({ responseType: 'text', accept: '*/*', context })
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<PanneDto>;
+      return (r as HttpResponse<any>).clone({ body: undefined }) as StrictHttpResponse<void>;
     })
   );
 }
 
-getById.PATH = '/admin/panne/{id}';
+deleteTicket.PATH = '/admin/Ticket/delete/{id}';

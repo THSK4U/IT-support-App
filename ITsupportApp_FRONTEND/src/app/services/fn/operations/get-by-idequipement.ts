@@ -6,25 +6,26 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
+import { EquipementDto } from '../../models/equipement-dto';
 
-export interface Delete_2$Params {
+export interface GetByIdequipement$Params {
   id: number;
 }
 
-export function delete_2(http: HttpClient, rootUrl: string, params: Delete_2$Params, context?: HttpContext): Observable<StrictHttpResponse<void>> {
-  const rb = new RequestBuilder(rootUrl, delete_2.PATH, 'delete');
+export function getByIdequipement(http: HttpClient, rootUrl: string, params: GetByIdequipement$Params, context?: HttpContext): Observable<StrictHttpResponse<EquipementDto>> {
+  const rb = new RequestBuilder(rootUrl, getByIdequipement.PATH, 'get');
   if (params) {
     rb.path('id', params.id, {});
   }
 
   return http.request(
-    rb.build({ responseType: 'text', accept: '*/*', context })
+    rb.build({ responseType: 'json', accept: 'application/json', context })
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return (r as HttpResponse<any>).clone({ body: undefined }) as StrictHttpResponse<void>;
+      return r as StrictHttpResponse<EquipementDto>;
     })
   );
 }
 
-delete_2.PATH = '/admin/Ticket/delete/{id}';
+getByIdequipement.PATH = '/admin/Equipement/{id}';

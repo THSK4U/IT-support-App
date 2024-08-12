@@ -8,12 +8,14 @@ import { RequestBuilder } from '../../request-builder';
 
 import { TicketSupportDto } from '../../models/ticket-support-dto';
 
-export interface GetAll_2$Params {
+export interface CreateTicket$Params {
+      body: TicketSupportDto
 }
 
-export function getAll_2(http: HttpClient, rootUrl: string, params?: GetAll_2$Params, context?: HttpContext): Observable<StrictHttpResponse<Array<TicketSupportDto>>> {
-  const rb = new RequestBuilder(rootUrl, getAll_2.PATH, 'get');
+export function createTicket(http: HttpClient, rootUrl: string, params: CreateTicket$Params, context?: HttpContext): Observable<StrictHttpResponse<TicketSupportDto>> {
+  const rb = new RequestBuilder(rootUrl, createTicket.PATH, 'post');
   if (params) {
+    rb.body(params.body, 'application/json');
   }
 
   return http.request(
@@ -21,9 +23,9 @@ export function getAll_2(http: HttpClient, rootUrl: string, params?: GetAll_2$Pa
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<Array<TicketSupportDto>>;
+      return r as StrictHttpResponse<TicketSupportDto>;
     })
   );
 }
 
-getAll_2.PATH = '/admin/Ticket';
+createTicket.PATH = '/user/Ticket/create';

@@ -7,12 +7,12 @@ import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
 
-export interface DeleteTechnicien_1$Params {
+export interface Deleteutilisateur$Params {
   id: number;
 }
 
-export function deleteTechnicien_1(http: HttpClient, rootUrl: string, params: DeleteTechnicien_1$Params, context?: HttpContext): Observable<StrictHttpResponse<void>> {
-  const rb = new RequestBuilder(rootUrl, deleteTechnicien_1.PATH, 'delete');
+export function deleteutilisateur(http: HttpClient, rootUrl: string, params: Deleteutilisateur$Params, context?: HttpContext): Observable<StrictHttpResponse<void>> {
+  const rb = new RequestBuilder(rootUrl, deleteutilisateur.PATH, 'delete');
   if (params) {
     rb.path('id', params.id, {});
   }
@@ -27,4 +27,4 @@ export function deleteTechnicien_1(http: HttpClient, rootUrl: string, params: De
   );
 }
 
-deleteTechnicien_1.PATH = '/admin/utilisateur/delete/{id}';
+deleteutilisateur.PATH = '/admin/utilisateur/delete/{id}';

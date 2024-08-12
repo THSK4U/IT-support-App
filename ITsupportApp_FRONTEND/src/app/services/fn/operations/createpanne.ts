@@ -6,17 +6,15 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { EquipementDto } from '../../models/equipement-dto';
+import { PanneDto } from '../../models/panne-dto';
 
-export interface Update_1$Params {
-  id: number;
-      body: EquipementDto
+export interface Createpanne$Params {
+      body: PanneDto
 }
 
-export function update_1(http: HttpClient, rootUrl: string, params: Update_1$Params, context?: HttpContext): Observable<StrictHttpResponse<EquipementDto>> {
-  const rb = new RequestBuilder(rootUrl, update_1.PATH, 'put');
+export function createpanne(http: HttpClient, rootUrl: string, params: Createpanne$Params, context?: HttpContext): Observable<StrictHttpResponse<PanneDto>> {
+  const rb = new RequestBuilder(rootUrl, createpanne.PATH, 'post');
   if (params) {
-    rb.path('id', params.id, {});
     rb.body(params.body, 'application/json');
   }
 
@@ -25,9 +23,9 @@ export function update_1(http: HttpClient, rootUrl: string, params: Update_1$Par
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<EquipementDto>;
+      return r as StrictHttpResponse<PanneDto>;
     })
   );
 }
 
-update_1.PATH = '/admin/Equipement/update/{id}';
+createpanne.PATH = '/admin/panne/create';

@@ -8,14 +8,14 @@ import { RequestBuilder } from '../../request-builder';
 
 import { PanneDto } from '../../models/panne-dto';
 
-export interface Create$Params {
-      body: PanneDto
+export interface GetByIdpanne$Params {
+  id: number;
 }
 
-export function create(http: HttpClient, rootUrl: string, params: Create$Params, context?: HttpContext): Observable<StrictHttpResponse<PanneDto>> {
-  const rb = new RequestBuilder(rootUrl, create.PATH, 'post');
+export function getByIdpanne(http: HttpClient, rootUrl: string, params: GetByIdpanne$Params, context?: HttpContext): Observable<StrictHttpResponse<PanneDto>> {
+  const rb = new RequestBuilder(rootUrl, getByIdpanne.PATH, 'get');
   if (params) {
-    rb.body(params.body, 'application/json');
+    rb.path('id', params.id, {});
   }
 
   return http.request(
@@ -28,4 +28,4 @@ export function create(http: HttpClient, rootUrl: string, params: Create$Params,
   );
 }
 
-create.PATH = '/admin/panne/create';
+getByIdpanne.PATH = '/admin/panne/{id}';

@@ -38,7 +38,7 @@
 //
 //    @Test
 //    public void testCreateUser() {
-//        UtilisateurDTO result = utilisateurService.create(utilisateurDTO);
+//        UtilisateurDTO result = utilisateurService.createpanne(utilisateurDTO);
 //
 //        assertNotNull(result);
 //        assertEquals(utilisateurDTO.getUsername(), result.getUsername());

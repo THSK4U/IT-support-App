@@ -6,14 +6,16 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { PanneDto } from '../../models/panne-dto';
+import { TicketSupportDto } from '../../models/ticket-support-dto';
 
-export interface GetAll$Params {
+export interface GetByIdTicket$Params {
+  id: number;
 }
 
-export function getAll(http: HttpClient, rootUrl: string, params?: GetAll$Params, context?: HttpContext): Observable<StrictHttpResponse<Array<PanneDto>>> {
-  const rb = new RequestBuilder(rootUrl, getAll.PATH, 'get');
+export function getByIdTicket(http: HttpClient, rootUrl: string, params: GetByIdTicket$Params, context?: HttpContext): Observable<StrictHttpResponse<TicketSupportDto>> {
+  const rb = new RequestBuilder(rootUrl, getByIdTicket.PATH, 'get');
   if (params) {
+    rb.path('id', params.id, {});
   }
 
   return http.request(
@@ -21,9 +23,9 @@ export function getAll(http: HttpClient, rootUrl: string, params?: GetAll$Params
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<Array<PanneDto>>;
+      return r as StrictHttpResponse<TicketSupportDto>;
     })
   );
 }
 
-getAll.PATH = '/adminuser/panne';
+getByIdTicket.PATH = '/admin/Ticket/{id}';

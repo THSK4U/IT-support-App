@@ -11,17 +11,17 @@ import static com.itsupport.itsupport_backend.controller.utils.Constants.*;
 public interface IPanneApi {
 
     @PostMapping(value = APP_ADMIN + "/panne/create", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    PanneDTO create(@RequestBody PanneDTO DTO);
+    PanneDTO createpanne(@RequestBody PanneDTO DTO);
 
     @DeleteMapping(value = APP_ADMIN + "/panne/delete/{id}")
-    void delete(@PathVariable("id") Long id);
+    void deletepanne(@PathVariable("id") Long id);
 
     @GetMapping(value = APP_ADMIN_USER + "/panne", produces = MediaType.APPLICATION_JSON_VALUE)
-    List<PanneDTO> getAll();
+    List<PanneDTO> getAllpanne();
 
     @GetMapping(value = APP_ADMIN + "/panne/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    PanneDTO getById(@PathVariable("id") Long id);
+    PanneDTO getByIdpanne(@PathVariable("id") Long id);
 
     @PutMapping(value = APP_ADMIN +"/panne/update/{id}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    PanneDTO update(@PathVariable("id") Long id, @RequestBody PanneDTO DTO);
+    PanneDTO updatepanne(@PathVariable("id") Long id, @RequestBody PanneDTO DTO);
 }

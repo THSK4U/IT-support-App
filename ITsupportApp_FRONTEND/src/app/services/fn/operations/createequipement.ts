@@ -6,17 +6,15 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { TicketSupportDto } from '../../models/ticket-support-dto';
+import { EquipementDto } from '../../models/equipement-dto';
 
-export interface Update_2$Params {
-  id: number;
-      body: TicketSupportDto
+export interface Createequipement$Params {
+      body: EquipementDto
 }
 
-export function update_2(http: HttpClient, rootUrl: string, params: Update_2$Params, context?: HttpContext): Observable<StrictHttpResponse<TicketSupportDto>> {
-  const rb = new RequestBuilder(rootUrl, update_2.PATH, 'put');
+export function createequipement(http: HttpClient, rootUrl: string, params: Createequipement$Params, context?: HttpContext): Observable<StrictHttpResponse<EquipementDto>> {
+  const rb = new RequestBuilder(rootUrl, createequipement.PATH, 'post');
   if (params) {
-    rb.path('id', params.id, {});
     rb.body(params.body, 'application/json');
   }
 
@@ -25,9 +23,9 @@ export function update_2(http: HttpClient, rootUrl: string, params: Update_2$Par
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<TicketSupportDto>;
+      return r as StrictHttpResponse<EquipementDto>;
     })
   );
 }
 
-update_2.PATH = '/admin/Ticket/update/{id}';
+createequipement.PATH = '/admin/Equipement/create';

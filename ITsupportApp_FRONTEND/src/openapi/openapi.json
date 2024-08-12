@@ -145,7 +145,7 @@
     "/admin/utilisateur" : {
       "get" : {
         "summary" : "GET admin/utilisateur",
-        "operationId" : "getAllTechniciens",
+        "operationId" : "getAllutilisateur",
         "responses" : {
           "200" : {
             "description" : "OK",
@@ -166,7 +166,7 @@
     "/admin/utilisateur/create" : {
       "post" : {
         "summary" : "POST admin/utilisateur/create",
-        "operationId" : "createTechnicien",
+        "operationId" : "createutilisateur",
         "requestBody" : {
           "content" : {
             "application/json" : {
@@ -194,7 +194,7 @@
     "/admin/utilisateur/delete/{id}" : {
       "delete" : {
         "summary" : "DELETE admin/utilisateur/delete/{id}",
-        "operationId" : "deleteTechnicien",
+        "operationId" : "deleteutilisateur",
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
@@ -214,7 +214,7 @@
     "/admin/utilisateur/update/{id}" : {
       "put" : {
         "summary" : "PUT admin/utilisateur/update/{id}",
-        "operationId" : "updateTechnicien",
+        "operationId" : "updateutilisateur",
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
@@ -251,7 +251,7 @@
     "/admin/utilisateur/{id}" : {
       "get" : {
         "summary" : "GET admin/utilisateur/{id}",
-        "operationId" : "getTechnicienById",
+        "operationId" : "getutilisateurById",
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
@@ -306,7 +306,7 @@
     "/admin/panne/create" : {
       "post" : {
         "summary" : "POST admin/panne/create",
-        "operationId" : "create",
+        "operationId" : "createpanne",
         "requestBody" : {
           "content" : {
             "application/json" : {
@@ -334,7 +334,7 @@
     "/admin/panne/delete/{id}" : {
       "delete" : {
         "summary" : "DELETE admin/panne/delete/{id}",
-        "operationId" : "delete",
+        "operationId" : "deletepanne",
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
@@ -354,7 +354,7 @@
     "/admin/panne/update/{id}" : {
       "put" : {
         "summary" : "PUT admin/panne/update/{id}",
-        "operationId" : "update",
+        "operationId" : "updatepanne",
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
@@ -391,7 +391,7 @@
     "/admin/panne/{id}" : {
       "get" : {
         "summary" : "GET admin/panne/{id}",
-        "operationId" : "getById",
+        "operationId" : "getByIdpanne",
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
@@ -418,7 +418,7 @@
     "/adminuser/panne" : {
       "get" : {
         "summary" : "GET adminuser/panne",
-        "operationId" : "getAll",
+        "operationId" : "getAllpanne",
         "responses" : {
           "200" : {
             "description" : "OK",
@@ -439,7 +439,7 @@
     "/admin/Equipement/create" : {
       "post" : {
         "summary" : "POST admin/Equipement/create",
-        "operationId" : "create",
+        "operationId" : "createequipement",
         "requestBody" : {
           "content" : {
             "application/json" : {
@@ -467,7 +467,7 @@
     "/admin/Equipement/delete/{id}" : {
       "delete" : {
         "summary" : "DELETE admin/Equipement/delete/{id}",
-        "operationId" : "delete",
+        "operationId" : "deleteequipement",
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
@@ -487,7 +487,7 @@
     "/admin/Equipement/update/{id}" : {
       "put" : {
         "summary" : "PUT admin/Equipement/update/{id}",
-        "operationId" : "update",
+        "operationId" : "updateequipement",
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
@@ -524,7 +524,7 @@
     "/admin/Equipement/{id}" : {
       "get" : {
         "summary" : "GET admin/Equipement/{id}",
-        "operationId" : "getById",
+        "operationId" : "getByIdequipement",
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
@@ -551,7 +551,7 @@
     "/adminuser/Equipement" : {
       "get" : {
         "summary" : "GET adminuser/Equipement",
-        "operationId" : "getAll",
+        "operationId" : "getAllequipement",
         "responses" : {
           "200" : {
             "description" : "OK",
@@ -572,7 +572,7 @@
     "/admin/Ticket" : {
       "get" : {
         "summary" : "GET admin/Ticket",
-        "operationId" : "getAll",
+        "operationId" : "getAllTicket",
         "responses" : {
           "200" : {
             "description" : "OK",
@@ -593,7 +593,7 @@
     "/admin/Ticket/delete/{id}" : {
       "delete" : {
         "summary" : "DELETE admin/Ticket/delete/{id}",
-        "operationId" : "delete",
+        "operationId" : "deleteTicket",
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
@@ -613,7 +613,7 @@
     "/admin/Ticket/update/{id}" : {
       "put" : {
         "summary" : "PUT admin/Ticket/update/{id}",
-        "operationId" : "update",
+        "operationId" : "updateTicket",
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
@@ -650,7 +650,7 @@
     "/admin/Ticket/{id}" : {
       "get" : {
         "summary" : "GET admin/Ticket/{id}",
-        "operationId" : "getById",
+        "operationId" : "getByIdTicket",
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
@@ -677,7 +677,7 @@
     "/admintech/Ticket/updateetat/{id}" : {
       "put" : {
         "summary" : "PUT admintech/Ticket/updateetat/{id}",
-        "operationId" : "updateEtat",
+        "operationId" : "updateEtatTicket",
         "parameters" : [ {
           "name" : "id",
           "in" : "path",
@@ -714,7 +714,7 @@
     "/user/Ticket/create" : {
       "post" : {
         "summary" : "POST user/Ticket/create",
-        "operationId" : "create",
+        "operationId" : "createTicket",
         "requestBody" : {
           "content" : {
             "application/json" : {

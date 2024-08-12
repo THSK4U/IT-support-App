@@ -18,27 +18,27 @@ public class PanneController implements IPanneApi {
     private IPanneService panneService;
 
     @Override
-    public PanneDTO create(PanneDTO DTO) {
+    public PanneDTO createpanne(PanneDTO DTO) {
         return panneService.create(DTO);
     }
 
     @Override
-    public void delete(Long id) {
+    public void deletepanne(Long id) {
         panneService.delete(id);
     }
 
     @Override
-    public List<PanneDTO> getAll() {
+    public List<PanneDTO> getAllpanne() {
         return panneService.getAll();
     }
 
     @Override
-    public PanneDTO getById(Long id) {
+    public PanneDTO getByIdpanne(Long id) {
         return panneService.getById(id);
     }
 
     @Override
-    public PanneDTO update(Long id, PanneDTO DTO) {
+    public PanneDTO updatepanne(Long id, PanneDTO DTO) {
         return panneService.update(id, DTO);
     }
 }

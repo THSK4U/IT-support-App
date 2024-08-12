@@ -6,15 +6,17 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { EquipementDto } from '../../models/equipement-dto';
+import { UtilisateurDto } from '../../models/utilisateur-dto';
 
-export interface Create_1$Params {
-      body: EquipementDto
+export interface Updateutilisateur$Params {
+  id: number;
+      body: UtilisateurDto
 }
 
-export function create_1(http: HttpClient, rootUrl: string, params: Create_1$Params, context?: HttpContext): Observable<StrictHttpResponse<EquipementDto>> {
-  const rb = new RequestBuilder(rootUrl, create_1.PATH, 'post');
+export function updateutilisateur(http: HttpClient, rootUrl: string, params: Updateutilisateur$Params, context?: HttpContext): Observable<StrictHttpResponse<UtilisateurDto>> {
+  const rb = new RequestBuilder(rootUrl, updateutilisateur.PATH, 'put');
   if (params) {
+    rb.path('id', params.id, {});
     rb.body(params.body, 'application/json');
   }
 
@@ -23,9 +25,9 @@ export function create_1(http: HttpClient, rootUrl: string, params: Create_1$Par
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<EquipementDto>;
+      return r as StrictHttpResponse<UtilisateurDto>;
     })
   );
 }
 
-create_1.PATH = '/admin/Equipement/create';
+updateutilisateur.PATH = '/admin/utilisateur/update/{id}';

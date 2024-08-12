@@ -6,26 +6,25 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { UtilisateurDto } from '../../models/utilisateur-dto';
 
-export interface GetTechnicienById_1$Params {
+export interface Deletepanne$Params {
   id: number;
 }
 
-export function getTechnicienById_1(http: HttpClient, rootUrl: string, params: GetTechnicienById_1$Params, context?: HttpContext): Observable<StrictHttpResponse<UtilisateurDto>> {
-  const rb = new RequestBuilder(rootUrl, getTechnicienById_1.PATH, 'get');
+export function deletepanne(http: HttpClient, rootUrl: string, params: Deletepanne$Params, context?: HttpContext): Observable<StrictHttpResponse<void>> {
+  const rb = new RequestBuilder(rootUrl, deletepanne.PATH, 'delete');
   if (params) {
     rb.path('id', params.id, {});
   }
 
   return http.request(
-    rb.build({ responseType: 'json', accept: 'application/json', context })
+    rb.build({ responseType: 'text', accept: '*/*', context })
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<UtilisateurDto>;
+      return (r as HttpResponse<any>).clone({ body: undefined }) as StrictHttpResponse<void>;
     })
   );
 }
 
-getTechnicienById_1.PATH = '/admin/utilisateur/{id}';
+deletepanne.PATH = '/admin/panne/delete/{id}';

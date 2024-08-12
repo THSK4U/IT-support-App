@@ -11,17 +11,17 @@ import static com.itsupport.itsupport_backend.controller.utils.Constants.*;
 public interface IEquipementApi {
 
     @PostMapping(value = APP_ADMIN + "/Equipement/create", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    EquipementDTO create(@RequestBody EquipementDTO DTO);
+    EquipementDTO createequipement(@RequestBody EquipementDTO DTO);
 
     @DeleteMapping(value = APP_ADMIN + "/Equipement/delete/{id}")
-    void delete(@PathVariable("id") Long id);
+    void deleteequipement(@PathVariable("id") Long id);
 
     @GetMapping(value = APP_ADMIN_USER + "/Equipement", produces = MediaType.APPLICATION_JSON_VALUE)
-    List<EquipementDTO> getAll();
+    List<EquipementDTO> getAllequipement();
 
     @GetMapping(value = APP_ADMIN + "/Equipement/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    EquipementDTO getById(@PathVariable("id") Long id);
+    EquipementDTO getByIdequipement(@PathVariable("id") Long id);
 
     @PutMapping(value = APP_ADMIN +"/Equipement/update/{id}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    EquipementDTO update(@PathVariable("id") Long id, @RequestBody EquipementDTO DTO);
+    EquipementDTO updateequipement(@PathVariable("id") Long id, @RequestBody EquipementDTO DTO);
 }

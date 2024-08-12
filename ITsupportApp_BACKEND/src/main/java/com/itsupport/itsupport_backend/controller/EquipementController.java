@@ -23,28 +23,28 @@ public class EquipementController implements IEquipementApi {
     private EquipementMapper Mapper;
 
     @Override
-    public EquipementDTO create(EquipementDTO DTO) {
+    public EquipementDTO createequipement(EquipementDTO DTO) {
         System.out.print(DTO);
         return Service.create(DTO);
     }
 
     @Override
-    public void delete(Long id) {
+    public void deleteequipement(Long id) {
         Service.delete(id);
     }
 
     @Override
-    public List<EquipementDTO> getAll() {
+    public List<EquipementDTO> getAllequipement() {
         return Service.getAll();
     }
 
     @Override
-    public EquipementDTO getById(Long id) {
+    public EquipementDTO getByIdequipement(Long id) {
         return Service.getById(id);
     }
 
     @Override
-    public EquipementDTO update(Long id, EquipementDTO DTO) {
+    public EquipementDTO updateequipement(Long id, EquipementDTO DTO) {
         return Service.update(id, DTO);
     }
 }

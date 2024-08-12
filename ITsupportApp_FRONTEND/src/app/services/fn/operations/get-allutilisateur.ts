@@ -8,16 +8,12 @@ import { RequestBuilder } from '../../request-builder';
 
 import { UtilisateurDto } from '../../models/utilisateur-dto';
 
-export interface UpdateTechnicien_1$Params {
-  id: number;
-      body: UtilisateurDto
+export interface GetAllutilisateur$Params {
 }
 
-export function updateTechnicien_1(http: HttpClient, rootUrl: string, params: UpdateTechnicien_1$Params, context?: HttpContext): Observable<StrictHttpResponse<UtilisateurDto>> {
-  const rb = new RequestBuilder(rootUrl, updateTechnicien_1.PATH, 'put');
+export function getAllutilisateur(http: HttpClient, rootUrl: string, params?: GetAllutilisateur$Params, context?: HttpContext): Observable<StrictHttpResponse<Array<UtilisateurDto>>> {
+  const rb = new RequestBuilder(rootUrl, getAllutilisateur.PATH, 'get');
   if (params) {
-    rb.path('id', params.id, {});
-    rb.body(params.body, 'application/json');
   }
 
   return http.request(
@@ -25,9 +21,9 @@ export function updateTechnicien_1(http: HttpClient, rootUrl: string, params: Up
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<UtilisateurDto>;
+      return r as StrictHttpResponse<Array<UtilisateurDto>>;
     })
   );
 }
 
-updateTechnicien_1.PATH = '/admin/utilisateur/update/{id}';
+getAllutilisateur.PATH = '/admin/utilisateur';

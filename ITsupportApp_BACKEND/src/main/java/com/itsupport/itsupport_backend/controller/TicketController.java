@@ -1,15 +1,9 @@
 package com.itsupport.itsupport_backend.controller;
 
-import com.itsupport.itsupport_backend.controller.api.IEquipementApi;
 import com.itsupport.itsupport_backend.controller.api.ITicketApi;
-import com.itsupport.itsupport_backend.model.Dto.EquipementDTO;
 import com.itsupport.itsupport_backend.model.Dto.TicketSupportDTO;
-import com.itsupport.itsupport_backend.model.Mapper.EquipementMapper;
-import com.itsupport.itsupport_backend.model.Mapper.TicketSupportMapper;
-import com.itsupport.itsupport_backend.service.Interface.IEquipementService;
 import com.itsupport.itsupport_backend.service.Interface.ITicketService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -21,32 +15,32 @@ public class TicketController implements ITicketApi {
     private ITicketService Service;
 
     @Override
-    public TicketSupportDTO create(TicketSupportDTO DTO) {
+    public TicketSupportDTO createTicket(TicketSupportDTO DTO) {
         return Service.create(DTO);
     }
 
     @Override
-    public void delete(Long id) {
+    public void deleteTicket(Long id) {
         Service.delete(id);
     }
 
     @Override
-    public List<TicketSupportDTO> getAll() {
+    public List<TicketSupportDTO> getAllTicket() {
         return Service.getAll();
     }
 
     @Override
-    public TicketSupportDTO getById(Long id) {
+    public TicketSupportDTO getByIdTicket(Long id) {
         return Service.getById(id);
     }
 
     @Override
-    public TicketSupportDTO update(Long id, TicketSupportDTO DTO) {
+    public TicketSupportDTO updateTicket(Long id, TicketSupportDTO DTO) {
         return Service.update(id, DTO);
     }
 
     @Override
-    public TicketSupportDTO updateEtat(Long id, TicketSupportDTO DTO) { return Service.updateEtat(id, DTO); }
+    public TicketSupportDTO updateEtatTicket(Long id, TicketSupportDTO DTO) { return Service.updateEtat(id, DTO); }
 
     @Override
     public List<TicketSupportDTO> getTicketsByUsername(String username) { return Service.findAllByUsername(username);}

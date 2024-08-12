@@ -6,15 +6,17 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { UtilisateurDto } from '../../models/utilisateur-dto';
+import { TicketSupportDto } from '../../models/ticket-support-dto';
 
-export interface CreateTechnicien_1$Params {
-      body: UtilisateurDto
+export interface UpdateTicket$Params {
+  id: number;
+      body: TicketSupportDto
 }
 
-export function createTechnicien_1(http: HttpClient, rootUrl: string, params: CreateTechnicien_1$Params, context?: HttpContext): Observable<StrictHttpResponse<UtilisateurDto>> {
-  const rb = new RequestBuilder(rootUrl, createTechnicien_1.PATH, 'post');
+export function updateTicket(http: HttpClient, rootUrl: string, params: UpdateTicket$Params, context?: HttpContext): Observable<StrictHttpResponse<TicketSupportDto>> {
+  const rb = new RequestBuilder(rootUrl, updateTicket.PATH, 'put');
   if (params) {
+    rb.path('id', params.id, {});
     rb.body(params.body, 'application/json');
   }
 
@@ -23,9 +25,9 @@ export function createTechnicien_1(http: HttpClient, rootUrl: string, params: Cr
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<UtilisateurDto>;
+      return r as StrictHttpResponse<TicketSupportDto>;
     })
   );
 }
 
-createTechnicien_1.PATH = '/admin/utilisateur/create';
+updateTicket.PATH = '/admin/Ticket/update/{id}';

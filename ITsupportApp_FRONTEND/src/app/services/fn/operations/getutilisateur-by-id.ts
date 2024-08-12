@@ -6,18 +6,16 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { PanneDto } from '../../models/panne-dto';
+import { UtilisateurDto } from '../../models/utilisateur-dto';
 
-export interface Update$Params {
+export interface GetutilisateurById$Params {
   id: number;
-      body: PanneDto
 }
 
-export function update(http: HttpClient, rootUrl: string, params: Update$Params, context?: HttpContext): Observable<StrictHttpResponse<PanneDto>> {
-  const rb = new RequestBuilder(rootUrl, update.PATH, 'put');
+export function getutilisateurById(http: HttpClient, rootUrl: string, params: GetutilisateurById$Params, context?: HttpContext): Observable<StrictHttpResponse<UtilisateurDto>> {
+  const rb = new RequestBuilder(rootUrl, getutilisateurById.PATH, 'get');
   if (params) {
     rb.path('id', params.id, {});
-    rb.body(params.body, 'application/json');
   }
 
   return http.request(
@@ -25,9 +23,9 @@ export function update(http: HttpClient, rootUrl: string, params: Update$Params,
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<PanneDto>;
+      return r as StrictHttpResponse<UtilisateurDto>;
     })
   );
 }
 
-update.PATH = '/admin/panne/update/{id}';
+getutilisateurById.PATH = '/admin/utilisateur/{id}';

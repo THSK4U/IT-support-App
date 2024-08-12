@@ -6,25 +6,24 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
+import { PanneDto } from '../../models/panne-dto';
 
-export interface Delete$Params {
-  id: number;
+export interface GetAllpanne$Params {
 }
 
-export function delete$(http: HttpClient, rootUrl: string, params: Delete$Params, context?: HttpContext): Observable<StrictHttpResponse<void>> {
-  const rb = new RequestBuilder(rootUrl, delete$.PATH, 'delete');
+export function getAllpanne(http: HttpClient, rootUrl: string, params?: GetAllpanne$Params, context?: HttpContext): Observable<StrictHttpResponse<Array<PanneDto>>> {
+  const rb = new RequestBuilder(rootUrl, getAllpanne.PATH, 'get');
   if (params) {
-    rb.path('id', params.id, {});
   }
 
   return http.request(
-    rb.build({ responseType: 'text', accept: '*/*', context })
+    rb.build({ responseType: 'json', accept: 'application/json', context })
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return (r as HttpResponse<any>).clone({ body: undefined }) as StrictHttpResponse<void>;
+      return r as StrictHttpResponse<Array<PanneDto>>;
     })
   );
 }
 
-delete$.PATH = '/admin/panne/delete/{id}';
+getAllpanne.PATH = '/adminuser/panne';

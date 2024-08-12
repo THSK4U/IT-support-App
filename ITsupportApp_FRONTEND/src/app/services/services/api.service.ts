@@ -10,66 +10,66 @@ import { ApiConfiguration } from '../api-configuration';
 import { StrictHttpResponse } from '../strict-http-response';
 
 import { AuthenticationResponse } from '../models/authentication-response';
-import { create } from '../fn/operations/create';
-import { create_1 } from '../fn/operations/create-1';
-import { Create_1$Params } from '../fn/operations/create-1';
-import { create_2 } from '../fn/operations/create-2';
-import { Create_2$Params } from '../fn/operations/create-2';
-import { Create$Params } from '../fn/operations/create';
+import { createequipement } from '../fn/operations/createequipement';
+import { Createequipement$Params } from '../fn/operations/createequipement';
+import { createpanne } from '../fn/operations/createpanne';
+import { Createpanne$Params } from '../fn/operations/createpanne';
 import { createTechnicien } from '../fn/operations/create-technicien';
-import { createTechnicien_1 } from '../fn/operations/create-technicien-1';
-import { CreateTechnicien_1$Params } from '../fn/operations/create-technicien-1';
 import { CreateTechnicien$Params } from '../fn/operations/create-technicien';
-import { delete_1 } from '../fn/operations/delete-1';
-import { Delete_1$Params } from '../fn/operations/delete-1';
-import { delete_2 } from '../fn/operations/delete-2';
-import { Delete_2$Params } from '../fn/operations/delete-2';
-import { delete$ } from '../fn/operations/delete';
-import { Delete$Params } from '../fn/operations/delete';
+import { createTicket } from '../fn/operations/create-ticket';
+import { CreateTicket$Params } from '../fn/operations/create-ticket';
+import { createutilisateur } from '../fn/operations/createutilisateur';
+import { Createutilisateur$Params } from '../fn/operations/createutilisateur';
+import { deleteequipement } from '../fn/operations/deleteequipement';
+import { Deleteequipement$Params } from '../fn/operations/deleteequipement';
+import { deletepanne } from '../fn/operations/deletepanne';
+import { Deletepanne$Params } from '../fn/operations/deletepanne';
 import { deleteTechnicien } from '../fn/operations/delete-technicien';
-import { deleteTechnicien_1 } from '../fn/operations/delete-technicien-1';
-import { DeleteTechnicien_1$Params } from '../fn/operations/delete-technicien-1';
 import { DeleteTechnicien$Params } from '../fn/operations/delete-technicien';
+import { deleteTicket } from '../fn/operations/delete-ticket';
+import { DeleteTicket$Params } from '../fn/operations/delete-ticket';
+import { deleteutilisateur } from '../fn/operations/deleteutilisateur';
+import { Deleteutilisateur$Params } from '../fn/operations/deleteutilisateur';
 import { EquipementDto } from '../models/equipement-dto';
-import { getAll } from '../fn/operations/get-all';
-import { getAll_1 } from '../fn/operations/get-all-1';
-import { GetAll_1$Params } from '../fn/operations/get-all-1';
-import { getAll_2 } from '../fn/operations/get-all-2';
-import { GetAll_2$Params } from '../fn/operations/get-all-2';
-import { GetAll$Params } from '../fn/operations/get-all';
+import { getAllequipement } from '../fn/operations/get-allequipement';
+import { GetAllequipement$Params } from '../fn/operations/get-allequipement';
+import { getAllpanne } from '../fn/operations/get-allpanne';
+import { GetAllpanne$Params } from '../fn/operations/get-allpanne';
 import { getAllTechniciens } from '../fn/operations/get-all-techniciens';
-import { getAllTechniciens_1 } from '../fn/operations/get-all-techniciens-1';
-import { GetAllTechniciens_1$Params } from '../fn/operations/get-all-techniciens-1';
 import { GetAllTechniciens$Params } from '../fn/operations/get-all-techniciens';
-import { getById } from '../fn/operations/get-by-id';
-import { getById_1 } from '../fn/operations/get-by-id-1';
-import { GetById_1$Params } from '../fn/operations/get-by-id-1';
-import { getById_2 } from '../fn/operations/get-by-id-2';
-import { GetById_2$Params } from '../fn/operations/get-by-id-2';
-import { GetById$Params } from '../fn/operations/get-by-id';
+import { getAllTicket } from '../fn/operations/get-all-ticket';
+import { GetAllTicket$Params } from '../fn/operations/get-all-ticket';
+import { getAllutilisateur } from '../fn/operations/get-allutilisateur';
+import { GetAllutilisateur$Params } from '../fn/operations/get-allutilisateur';
+import { getByIdequipement } from '../fn/operations/get-by-idequipement';
+import { GetByIdequipement$Params } from '../fn/operations/get-by-idequipement';
+import { getByIdpanne } from '../fn/operations/get-by-idpanne';
+import { GetByIdpanne$Params } from '../fn/operations/get-by-idpanne';
+import { getByIdTicket } from '../fn/operations/get-by-id-ticket';
+import { GetByIdTicket$Params } from '../fn/operations/get-by-id-ticket';
 import { getTechnicienById } from '../fn/operations/get-technicien-by-id';
-import { getTechnicienById_1 } from '../fn/operations/get-technicien-by-id-1';
-import { GetTechnicienById_1$Params } from '../fn/operations/get-technicien-by-id-1';
 import { GetTechnicienById$Params } from '../fn/operations/get-technicien-by-id';
 import { getTicketsByUsername } from '../fn/operations/get-tickets-by-username';
 import { GetTicketsByUsername$Params } from '../fn/operations/get-tickets-by-username';
+import { getutilisateurById } from '../fn/operations/getutilisateur-by-id';
+import { GetutilisateurById$Params } from '../fn/operations/getutilisateur-by-id';
 import { login } from '../fn/operations/login';
 import { Login$Params } from '../fn/operations/login';
 import { PanneDto } from '../models/panne-dto';
 import { TechnicienDto } from '../models/technicien-dto';
 import { TicketSupportDto } from '../models/ticket-support-dto';
-import { update } from '../fn/operations/update';
-import { update_1 } from '../fn/operations/update-1';
-import { Update_1$Params } from '../fn/operations/update-1';
-import { update_2 } from '../fn/operations/update-2';
-import { Update_2$Params } from '../fn/operations/update-2';
-import { Update$Params } from '../fn/operations/update';
-import { updateEtat } from '../fn/operations/update-etat';
-import { UpdateEtat$Params } from '../fn/operations/update-etat';
+import { updateequipement } from '../fn/operations/updateequipement';
+import { Updateequipement$Params } from '../fn/operations/updateequipement';
+import { updateEtatTicket } from '../fn/operations/update-etat-ticket';
+import { UpdateEtatTicket$Params } from '../fn/operations/update-etat-ticket';
+import { updatepanne } from '../fn/operations/updatepanne';
+import { Updatepanne$Params } from '../fn/operations/updatepanne';
 import { updateTechnicien } from '../fn/operations/update-technicien';
-import { updateTechnicien_1 } from '../fn/operations/update-technicien-1';
-import { UpdateTechnicien_1$Params } from '../fn/operations/update-technicien-1';
 import { UpdateTechnicien$Params } from '../fn/operations/update-technicien';
+import { updateTicket } from '../fn/operations/update-ticket';
+import { UpdateTicket$Params } from '../fn/operations/update-ticket';
+import { updateutilisateur } from '../fn/operations/updateutilisateur';
+import { Updateutilisateur$Params } from '../fn/operations/updateutilisateur';
 import { UtilisateurDto } from '../models/utilisateur-dto';
 
 @Injectable({ providedIn: 'root' })
@@ -243,8 +243,8 @@ export class ApiService extends BaseService {
     );
   }
 
-  /** Path part for operation `getAllTechniciens_1()` */
-  static readonly GetAllTechniciens_1Path = '/admin/utilisateur';
+  /** Path part for operation `getAllutilisateur()` */
+  static readonly GetAllutilisateurPath = '/admin/utilisateur';
 
   /**
    * GET admin/utilisateur.
@@ -252,12 +252,12 @@ export class ApiService extends BaseService {
    *
    *
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
-   * To access only the response body, use `getAllTechniciens_1()` instead.
+   * To access only the response body, use `getAllutilisateur()` instead.
    *
    * This method doesn't expect any request body.
    */
-  getAllTechniciens_1$Response(params?: GetAllTechniciens_1$Params, context?: HttpContext): Observable<StrictHttpResponse<Array<UtilisateurDto>>> {
-    return getAllTechniciens_1(this.http, this.rootUrl, params, context);
+  getAllutilisateur$Response(params?: GetAllutilisateur$Params, context?: HttpContext): Observable<StrictHttpResponse<Array<UtilisateurDto>>> {
+    return getAllutilisateur(this.http, this.rootUrl, params, context);
   }
 
   /**
@@ -266,18 +266,18 @@ export class ApiService extends BaseService {
    *
    *
    * This method provides access only to the response body.
-   * To access the full response (for headers, for example), `getAllTechniciens_1$Response()` instead.
+   * To access the full response (for headers, for example), `getAllutilisateur$Response()` instead.
    *
    * This method doesn't expect any request body.
    */
-  getAllTechniciens_1(params?: GetAllTechniciens_1$Params, context?: HttpContext): Observable<Array<UtilisateurDto>> {
-    return this.getAllTechniciens_1$Response(params, context).pipe(
+  getAllutilisateur(params?: GetAllutilisateur$Params, context?: HttpContext): Observable<Array<UtilisateurDto>> {
+    return this.getAllutilisateur$Response(params, context).pipe(
       map((r: StrictHttpResponse<Array<UtilisateurDto>>): Array<UtilisateurDto> => r.body)
     );
   }
 
-  /** Path part for operation `createTechnicien_1()` */
-  static readonly CreateTechnicien_1Path = '/admin/utilisateur/create';
+  /** Path part for operation `createutilisateur()` */
+  static readonly CreateutilisateurPath = '/admin/utilisateur/create';
 
   /**
    * POST admin/utilisateur/create.
@@ -285,12 +285,12 @@ export class ApiService extends BaseService {
    *
    *
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
-   * To access only the response body, use `createTechnicien_1()` instead.
+   * To access only the response body, use `createutilisateur()` instead.
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  createTechnicien_1$Response(params: CreateTechnicien_1$Params, context?: HttpContext): Observable<StrictHttpResponse<UtilisateurDto>> {
-    return createTechnicien_1(this.http, this.rootUrl, params, context);
+  createutilisateur$Response(params: Createutilisateur$Params, context?: HttpContext): Observable<StrictHttpResponse<UtilisateurDto>> {
+    return createutilisateur(this.http, this.rootUrl, params, context);
   }
 
   /**
@@ -299,18 +299,18 @@ export class ApiService extends BaseService {
    *
    *
    * This method provides access only to the response body.
-   * To access the full response (for headers, for example), `createTechnicien_1$Response()` instead.
+   * To access the full response (for headers, for example), `createutilisateur$Response()` instead.
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  createTechnicien_1(params: CreateTechnicien_1$Params, context?: HttpContext): Observable<UtilisateurDto> {
-    return this.createTechnicien_1$Response(params, context).pipe(
+  createutilisateur(params: Createutilisateur$Params, context?: HttpContext): Observable<UtilisateurDto> {
+    return this.createutilisateur$Response(params, context).pipe(
       map((r: StrictHttpResponse<UtilisateurDto>): UtilisateurDto => r.body)
     );
   }
 
-  /** Path part for operation `deleteTechnicien_1()` */
-  static readonly DeleteTechnicien_1Path = '/admin/utilisateur/delete/{id}';
+  /** Path part for operation `deleteutilisateur()` */
+  static readonly DeleteutilisateurPath = '/admin/utilisateur/delete/{id}';
 
   /**
    * DELETE admin/utilisateur/delete/{id}.
@@ -318,12 +318,12 @@ export class ApiService extends BaseService {
    *
    *
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
-   * To access only the response body, use `deleteTechnicien_1()` instead.
+   * To access only the response body, use `deleteutilisateur()` instead.
    *
    * This method doesn't expect any request body.
    */
-  deleteTechnicien_1$Response(params: DeleteTechnicien_1$Params, context?: HttpContext): Observable<StrictHttpResponse<void>> {
-    return deleteTechnicien_1(this.http, this.rootUrl, params, context);
+  deleteutilisateur$Response(params: Deleteutilisateur$Params, context?: HttpContext): Observable<StrictHttpResponse<void>> {
+    return deleteutilisateur(this.http, this.rootUrl, params, context);
   }
 
   /**
@@ -332,18 +332,18 @@ export class ApiService extends BaseService {
    *
    *
    * This method provides access only to the response body.
-   * To access the full response (for headers, for example), `deleteTechnicien_1$Response()` instead.
+   * To access the full response (for headers, for example), `deleteutilisateur$Response()` instead.
    *
    * This method doesn't expect any request body.
    */
-  deleteTechnicien_1(params: DeleteTechnicien_1$Params, context?: HttpContext): Observable<void> {
-    return this.deleteTechnicien_1$Response(params, context).pipe(
+  deleteutilisateur(params: Deleteutilisateur$Params, context?: HttpContext): Observable<void> {
+    return this.deleteutilisateur$Response(params, context).pipe(
       map((r: StrictHttpResponse<void>): void => r.body)
     );
   }
 
-  /** Path part for operation `updateTechnicien_1()` */
-  static readonly UpdateTechnicien_1Path = '/admin/utilisateur/update/{id}';
+  /** Path part for operation `updateutilisateur()` */
+  static readonly UpdateutilisateurPath = '/admin/utilisateur/update/{id}';
 
   /**
    * PUT admin/utilisateur/update/{id}.
@@ -351,12 +351,12 @@ export class ApiService extends BaseService {
    *
    *
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
-   * To access only the response body, use `updateTechnicien_1()` instead.
+   * To access only the response body, use `updateutilisateur()` instead.
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  updateTechnicien_1$Response(params: UpdateTechnicien_1$Params, context?: HttpContext): Observable<StrictHttpResponse<UtilisateurDto>> {
-    return updateTechnicien_1(this.http, this.rootUrl, params, context);
+  updateutilisateur$Response(params: Updateutilisateur$Params, context?: HttpContext): Observable<StrictHttpResponse<UtilisateurDto>> {
+    return updateutilisateur(this.http, this.rootUrl, params, context);
   }
 
   /**
@@ -365,18 +365,18 @@ export class ApiService extends BaseService {
    *
    *
    * This method provides access only to the response body.
-   * To access the full response (for headers, for example), `updateTechnicien_1$Response()` instead.
+   * To access the full response (for headers, for example), `updateutilisateur$Response()` instead.
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  updateTechnicien_1(params: UpdateTechnicien_1$Params, context?: HttpContext): Observable<UtilisateurDto> {
-    return this.updateTechnicien_1$Response(params, context).pipe(
+  updateutilisateur(params: Updateutilisateur$Params, context?: HttpContext): Observable<UtilisateurDto> {
+    return this.updateutilisateur$Response(params, context).pipe(
       map((r: StrictHttpResponse<UtilisateurDto>): UtilisateurDto => r.body)
     );
   }
 
-  /** Path part for operation `getTechnicienById_1()` */
-  static readonly GetTechnicienById_1Path = '/admin/utilisateur/{id}';
+  /** Path part for operation `getutilisateurById()` */
+  static readonly GetutilisateurByIdPath = '/admin/utilisateur/{id}';
 
   /**
    * GET admin/utilisateur/{id}.
@@ -384,12 +384,12 @@ export class ApiService extends BaseService {
    *
    *
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
-   * To access only the response body, use `getTechnicienById_1()` instead.
+   * To access only the response body, use `getutilisateurById()` instead.
    *
    * This method doesn't expect any request body.
    */
-  getTechnicienById_1$Response(params: GetTechnicienById_1$Params, context?: HttpContext): Observable<StrictHttpResponse<UtilisateurDto>> {
-    return getTechnicienById_1(this.http, this.rootUrl, params, context);
+  getutilisateurById$Response(params: GetutilisateurById$Params, context?: HttpContext): Observable<StrictHttpResponse<UtilisateurDto>> {
+    return getutilisateurById(this.http, this.rootUrl, params, context);
   }
 
   /**
@@ -398,12 +398,12 @@ export class ApiService extends BaseService {
    *
    *
    * This method provides access only to the response body.
-   * To access the full response (for headers, for example), `getTechnicienById_1$Response()` instead.
+   * To access the full response (for headers, for example), `getutilisateurById$Response()` instead.
    *
    * This method doesn't expect any request body.
    */
-  getTechnicienById_1(params: GetTechnicienById_1$Params, context?: HttpContext): Observable<UtilisateurDto> {
-    return this.getTechnicienById_1$Response(params, context).pipe(
+  getutilisateurById(params: GetutilisateurById$Params, context?: HttpContext): Observable<UtilisateurDto> {
+    return this.getutilisateurById$Response(params, context).pipe(
       map((r: StrictHttpResponse<UtilisateurDto>): UtilisateurDto => r.body)
     );
   }
@@ -441,8 +441,8 @@ export class ApiService extends BaseService {
     );
   }
 
-  /** Path part for operation `create()` */
-  static readonly CreatePath = '/admin/panne/create';
+  /** Path part for operation `createpanne()` */
+  static readonly CreatepannePath = '/admin/panne/create';
 
   /**
    * POST admin/panne/create.
@@ -450,12 +450,12 @@ export class ApiService extends BaseService {
    *
    *
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
-   * To access only the response body, use `create()` instead.
+   * To access only the response body, use `createpanne()` instead.
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  create$Response(params: Create$Params, context?: HttpContext): Observable<StrictHttpResponse<PanneDto>> {
-    return create(this.http, this.rootUrl, params, context);
+  createpanne$Response(params: Createpanne$Params, context?: HttpContext): Observable<StrictHttpResponse<PanneDto>> {
+    return createpanne(this.http, this.rootUrl, params, context);
   }
 
   /**
@@ -464,18 +464,18 @@ export class ApiService extends BaseService {
    *
    *
    * This method provides access only to the response body.
-   * To access the full response (for headers, for example), `create$Response()` instead.
+   * To access the full response (for headers, for example), `createpanne$Response()` instead.
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  create(params: Create$Params, context?: HttpContext): Observable<PanneDto> {
-    return this.create$Response(params, context).pipe(
+  createpanne(params: Createpanne$Params, context?: HttpContext): Observable<PanneDto> {
+    return this.createpanne$Response(params, context).pipe(
       map((r: StrictHttpResponse<PanneDto>): PanneDto => r.body)
     );
   }
 
-  /** Path part for operation `delete()` */
-  static readonly DeletePath = '/admin/panne/delete/{id}';
+  /** Path part for operation `deletepanne()` */
+  static readonly DeletepannePath = '/admin/panne/delete/{id}';
 
   /**
    * DELETE admin/panne/delete/{id}.
@@ -483,12 +483,12 @@ export class ApiService extends BaseService {
    *
    *
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
-   * To access only the response body, use `delete()` instead.
+   * To access only the response body, use `deletepanne()` instead.
    *
    * This method doesn't expect any request body.
    */
-  delete$Response(params: Delete$Params, context?: HttpContext): Observable<StrictHttpResponse<void>> {
-    return delete$(this.http, this.rootUrl, params, context);
+  deletepanne$Response(params: Deletepanne$Params, context?: HttpContext): Observable<StrictHttpResponse<void>> {
+    return deletepanne(this.http, this.rootUrl, params, context);
   }
 
   /**
@@ -497,18 +497,18 @@ export class ApiService extends BaseService {
    *
    *
    * This method provides access only to the response body.
-   * To access the full response (for headers, for example), `delete$Response()` instead.
+   * To access the full response (for headers, for example), `deletepanne$Response()` instead.
    *
    * This method doesn't expect any request body.
    */
-  delete(params: Delete$Params, context?: HttpContext): Observable<void> {
-    return this.delete$Response(params, context).pipe(
+  deletepanne(params: Deletepanne$Params, context?: HttpContext): Observable<void> {
+    return this.deletepanne$Response(params, context).pipe(
       map((r: StrictHttpResponse<void>): void => r.body)
     );
   }
 
-  /** Path part for operation `update()` */
-  static readonly UpdatePath = '/admin/panne/update/{id}';
+  /** Path part for operation `updatepanne()` */
+  static readonly UpdatepannePath = '/admin/panne/update/{id}';
 
   /**
    * PUT admin/panne/update/{id}.
@@ -516,12 +516,12 @@ export class ApiService extends BaseService {
    *
    *
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
-   * To access only the response body, use `update()` instead.
+   * To access only the response body, use `updatepanne()` instead.
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  update$Response(params: Update$Params, context?: HttpContext): Observable<StrictHttpResponse<PanneDto>> {
-    return update(this.http, this.rootUrl, params, context);
+  updatepanne$Response(params: Updatepanne$Params, context?: HttpContext): Observable<StrictHttpResponse<PanneDto>> {
+    return updatepanne(this.http, this.rootUrl, params, context);
   }
 
   /**
@@ -530,18 +530,18 @@ export class ApiService extends BaseService {
    *
    *
    * This method provides access only to the response body.
-   * To access the full response (for headers, for example), `update$Response()` instead.
+   * To access the full response (for headers, for example), `updatepanne$Response()` instead.
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  update(params: Update$Params, context?: HttpContext): Observable<PanneDto> {
-    return this.update$Response(params, context).pipe(
+  updatepanne(params: Updatepanne$Params, context?: HttpContext): Observable<PanneDto> {
+    return this.updatepanne$Response(params, context).pipe(
       map((r: StrictHttpResponse<PanneDto>): PanneDto => r.body)
     );
   }
 
-  /** Path part for operation `getById()` */
-  static readonly GetByIdPath = '/admin/panne/{id}';
+  /** Path part for operation `getByIdpanne()` */
+  static readonly GetByIdpannePath = '/admin/panne/{id}';
 
   /**
    * GET admin/panne/{id}.
@@ -549,12 +549,12 @@ export class ApiService extends BaseService {
    *
    *
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
-   * To access only the response body, use `getById()` instead.
+   * To access only the response body, use `getByIdpanne()` instead.
    *
    * This method doesn't expect any request body.
    */
-  getById$Response(params: GetById$Params, context?: HttpContext): Observable<StrictHttpResponse<PanneDto>> {
-    return getById(this.http, this.rootUrl, params, context);
+  getByIdpanne$Response(params: GetByIdpanne$Params, context?: HttpContext): Observable<StrictHttpResponse<PanneDto>> {
+    return getByIdpanne(this.http, this.rootUrl, params, context);
   }
 
   /**
@@ -563,18 +563,18 @@ export class ApiService extends BaseService {
    *
    *
    * This method provides access only to the response body.
-   * To access the full response (for headers, for example), `getById$Response()` instead.
+   * To access the full response (for headers, for example), `getByIdpanne$Response()` instead.
    *
    * This method doesn't expect any request body.
    */
-  getById(params: GetById$Params, context?: HttpContext): Observable<PanneDto> {
-    return this.getById$Response(params, context).pipe(
+  getByIdpanne(params: GetByIdpanne$Params, context?: HttpContext): Observable<PanneDto> {
+    return this.getByIdpanne$Response(params, context).pipe(
       map((r: StrictHttpResponse<PanneDto>): PanneDto => r.body)
     );
   }
 
-  /** Path part for operation `getAll()` */
-  static readonly GetAllPath = '/adminuser/panne';
+  /** Path part for operation `getAllpanne()` */
+  static readonly GetAllpannePath = '/adminuser/panne';
 
   /**
    * GET adminuser/panne.
@@ -582,12 +582,12 @@ export class ApiService extends BaseService {
    *
    *
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
-   * To access only the response body, use `getAll()` instead.
+   * To access only the response body, use `getAllpanne()` instead.
    *
    * This method doesn't expect any request body.
    */
-  getAll$Response(params?: GetAll$Params, context?: HttpContext): Observable<StrictHttpResponse<Array<PanneDto>>> {
-    return getAll(this.http, this.rootUrl, params, context);
+  getAllpanne$Response(params?: GetAllpanne$Params, context?: HttpContext): Observable<StrictHttpResponse<Array<PanneDto>>> {
+    return getAllpanne(this.http, this.rootUrl, params, context);
   }
 
   /**
@@ -596,18 +596,18 @@ export class ApiService extends BaseService {
    *
    *
    * This method provides access only to the response body.
-   * To access the full response (for headers, for example), `getAll$Response()` instead.
+   * To access the full response (for headers, for example), `getAllpanne$Response()` instead.
    *
    * This method doesn't expect any request body.
    */
-  getAll(params?: GetAll$Params, context?: HttpContext): Observable<Array<PanneDto>> {
-    return this.getAll$Response(params, context).pipe(
+  getAllpanne(params?: GetAllpanne$Params, context?: HttpContext): Observable<Array<PanneDto>> {
+    return this.getAllpanne$Response(params, context).pipe(
       map((r: StrictHttpResponse<Array<PanneDto>>): Array<PanneDto> => r.body)
     );
   }
 
-  /** Path part for operation `create_1()` */
-  static readonly Create_1Path = '/admin/Equipement/create';
+  /** Path part for operation `createequipement()` */
+  static readonly CreateequipementPath = '/admin/Equipement/create';
 
   /**
    * POST admin/Equipement/create.
@@ -615,12 +615,12 @@ export class ApiService extends BaseService {
    *
    *
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
-   * To access only the response body, use `create_1()` instead.
+   * To access only the response body, use `createequipement()` instead.
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  create_1$Response(params: Create_1$Params, context?: HttpContext): Observable<StrictHttpResponse<EquipementDto>> {
-    return create_1(this.http, this.rootUrl, params, context);
+  createequipement$Response(params: Createequipement$Params, context?: HttpContext): Observable<StrictHttpResponse<EquipementDto>> {
+    return createequipement(this.http, this.rootUrl, params, context);
   }
 
   /**
@@ -629,18 +629,18 @@ export class ApiService extends BaseService {
    *
    *
    * This method provides access only to the response body.
-   * To access the full response (for headers, for example), `create_1$Response()` instead.
+   * To access the full response (for headers, for example), `createequipement$Response()` instead.
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  create_1(params: Create_1$Params, context?: HttpContext): Observable<EquipementDto> {
-    return this.create_1$Response(params, context).pipe(
+  createequipement(params: Createequipement$Params, context?: HttpContext): Observable<EquipementDto> {
+    return this.createequipement$Response(params, context).pipe(
       map((r: StrictHttpResponse<EquipementDto>): EquipementDto => r.body)
     );
   }
 
-  /** Path part for operation `delete_1()` */
-  static readonly Delete_1Path = '/admin/Equipement/delete/{id}';
+  /** Path part for operation `deleteequipement()` */
+  static readonly DeleteequipementPath = '/admin/Equipement/delete/{id}';
 
   /**
    * DELETE admin/Equipement/delete/{id}.
@@ -648,12 +648,12 @@ export class ApiService extends BaseService {
    *
    *
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
-   * To access only the response body, use `delete_1()` instead.
+   * To access only the response body, use `deleteequipement()` instead.
    *
    * This method doesn't expect any request body.
    */
-  delete_1$Response(params: Delete_1$Params, context?: HttpContext): Observable<StrictHttpResponse<void>> {
-    return delete_1(this.http, this.rootUrl, params, context);
+  deleteequipement$Response(params: Deleteequipement$Params, context?: HttpContext): Observable<StrictHttpResponse<void>> {
+    return deleteequipement(this.http, this.rootUrl, params, context);
   }
 
   /**
@@ -662,18 +662,18 @@ export class ApiService extends BaseService {
    *
    *
    * This method provides access only to the response body.
-   * To access the full response (for headers, for example), `delete_1$Response()` instead.
+   * To access the full response (for headers, for example), `deleteequipement$Response()` instead.
    *
    * This method doesn't expect any request body.
    */
-  delete_1(params: Delete_1$Params, context?: HttpContext): Observable<void> {
-    return this.delete_1$Response(params, context).pipe(
+  deleteequipement(params: Deleteequipement$Params, context?: HttpContext): Observable<void> {
+    return this.deleteequipement$Response(params, context).pipe(
       map((r: StrictHttpResponse<void>): void => r.body)
     );
   }
 
-  /** Path part for operation `update_1()` */
-  static readonly Update_1Path = '/admin/Equipement/update/{id}';
+  /** Path part for operation `updateequipement()` */
+  static readonly UpdateequipementPath = '/admin/Equipement/update/{id}';
 
   /**
    * PUT admin/Equipement/update/{id}.
@@ -681,12 +681,12 @@ export class ApiService extends BaseService {
    *
    *
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
-   * To access only the response body, use `update_1()` instead.
+   * To access only the response body, use `updateequipement()` instead.
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  update_1$Response(params: Update_1$Params, context?: HttpContext): Observable<StrictHttpResponse<EquipementDto>> {
-    return update_1(this.http, this.rootUrl, params, context);
+  updateequipement$Response(params: Updateequipement$Params, context?: HttpContext): Observable<StrictHttpResponse<EquipementDto>> {
+    return updateequipement(this.http, this.rootUrl, params, context);
   }
 
   /**
@@ -695,18 +695,18 @@ export class ApiService extends BaseService {
    *
    *
    * This method provides access only to the response body.
-   * To access the full response (for headers, for example), `update_1$Response()` instead.
+   * To access the full response (for headers, for example), `updateequipement$Response()` instead.
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  update_1(params: Update_1$Params, context?: HttpContext): Observable<EquipementDto> {
-    return this.update_1$Response(params, context).pipe(
+  updateequipement(params: Updateequipement$Params, context?: HttpContext): Observable<EquipementDto> {
+    return this.updateequipement$Response(params, context).pipe(
       map((r: StrictHttpResponse<EquipementDto>): EquipementDto => r.body)
     );
   }
 
-  /** Path part for operation `getById_1()` */
-  static readonly GetById_1Path = '/admin/Equipement/{id}';
+  /** Path part for operation `getByIdequipement()` */
+  static readonly GetByIdequipementPath = '/admin/Equipement/{id}';
 
   /**
    * GET admin/Equipement/{id}.
@@ -714,12 +714,12 @@ export class ApiService extends BaseService {
    *
    *
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
-   * To access only the response body, use `getById_1()` instead.
+   * To access only the response body, use `getByIdequipement()` instead.
    *
    * This method doesn't expect any request body.
    */
-  getById_1$Response(params: GetById_1$Params, context?: HttpContext): Observable<StrictHttpResponse<EquipementDto>> {
-    return getById_1(this.http, this.rootUrl, params, context);
+  getByIdequipement$Response(params: GetByIdequipement$Params, context?: HttpContext): Observable<StrictHttpResponse<EquipementDto>> {
+    return getByIdequipement(this.http, this.rootUrl, params, context);
   }
 
   /**
@@ -728,18 +728,18 @@ export class ApiService extends BaseService {
    *
    *
    * This method provides access only to the response body.
-   * To access the full response (for headers, for example), `getById_1$Response()` instead.
+   * To access the full response (for headers, for example), `getByIdequipement$Response()` instead.
    *
    * This method doesn't expect any request body.
    */
-  getById_1(params: GetById_1$Params, context?: HttpContext): Observable<EquipementDto> {
-    return this.getById_1$Response(params, context).pipe(
+  getByIdequipement(params: GetByIdequipement$Params, context?: HttpContext): Observable<EquipementDto> {
+    return this.getByIdequipement$Response(params, context).pipe(
       map((r: StrictHttpResponse<EquipementDto>): EquipementDto => r.body)
     );
   }
 
-  /** Path part for operation `getAll_1()` */
-  static readonly GetAll_1Path = '/adminuser/Equipement';
+  /** Path part for operation `getAllequipement()` */
+  static readonly GetAllequipementPath = '/adminuser/Equipement';
 
   /**
    * GET adminuser/Equipement.
@@ -747,12 +747,12 @@ export class ApiService extends BaseService {
    *
    *
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
-   * To access only the response body, use `getAll_1()` instead.
+   * To access only the response body, use `getAllequipement()` instead.
    *
    * This method doesn't expect any request body.
    */
-  getAll_1$Response(params?: GetAll_1$Params, context?: HttpContext): Observable<StrictHttpResponse<Array<EquipementDto>>> {
-    return getAll_1(this.http, this.rootUrl, params, context);
+  getAllequipement$Response(params?: GetAllequipement$Params, context?: HttpContext): Observable<StrictHttpResponse<Array<EquipementDto>>> {
+    return getAllequipement(this.http, this.rootUrl, params, context);
   }
 
   /**
@@ -761,18 +761,18 @@ export class ApiService extends BaseService {
    *
    *
    * This method provides access only to the response body.
-   * To access the full response (for headers, for example), `getAll_1$Response()` instead.
+   * To access the full response (for headers, for example), `getAllequipement$Response()` instead.
    *
    * This method doesn't expect any request body.
    */
-  getAll_1(params?: GetAll_1$Params, context?: HttpContext): Observable<Array<EquipementDto>> {
-    return this.getAll_1$Response(params, context).pipe(
+  getAllequipement(params?: GetAllequipement$Params, context?: HttpContext): Observable<Array<EquipementDto>> {
+    return this.getAllequipement$Response(params, context).pipe(
       map((r: StrictHttpResponse<Array<EquipementDto>>): Array<EquipementDto> => r.body)
     );
   }
 
-  /** Path part for operation `getAll_2()` */
-  static readonly GetAll_2Path = '/admin/Ticket';
+  /** Path part for operation `getAllTicket()` */
+  static readonly GetAllTicketPath = '/admin/Ticket';
 
   /**
    * GET admin/Ticket.
@@ -780,12 +780,12 @@ export class ApiService extends BaseService {
    *
    *
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
-   * To access only the response body, use `getAll_2()` instead.
+   * To access only the response body, use `getAllTicket()` instead.
    *
    * This method doesn't expect any request body.
    */
-  getAll_2$Response(params?: GetAll_2$Params, context?: HttpContext): Observable<StrictHttpResponse<Array<TicketSupportDto>>> {
-    return getAll_2(this.http, this.rootUrl, params, context);
+  getAllTicket$Response(params?: GetAllTicket$Params, context?: HttpContext): Observable<StrictHttpResponse<Array<TicketSupportDto>>> {
+    return getAllTicket(this.http, this.rootUrl, params, context);
   }
 
   /**
@@ -794,18 +794,18 @@ export class ApiService extends BaseService {
    *
    *
    * This method provides access only to the response body.
-   * To access the full response (for headers, for example), `getAll_2$Response()` instead.
+   * To access the full response (for headers, for example), `getAllTicket$Response()` instead.
    *
    * This method doesn't expect any request body.
    */
-  getAll_2(params?: GetAll_2$Params, context?: HttpContext): Observable<Array<TicketSupportDto>> {
-    return this.getAll_2$Response(params, context).pipe(
+  getAllTicket(params?: GetAllTicket$Params, context?: HttpContext): Observable<Array<TicketSupportDto>> {
+    return this.getAllTicket$Response(params, context).pipe(
       map((r: StrictHttpResponse<Array<TicketSupportDto>>): Array<TicketSupportDto> => r.body)
     );
   }
 
-  /** Path part for operation `delete_2()` */
-  static readonly Delete_2Path = '/admin/Ticket/delete/{id}';
+  /** Path part for operation `deleteTicket()` */
+  static readonly DeleteTicketPath = '/admin/Ticket/delete/{id}';
 
   /**
    * DELETE admin/Ticket/delete/{id}.
@@ -813,12 +813,12 @@ export class ApiService extends BaseService {
    *
    *
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
-   * To access only the response body, use `delete_2()` instead.
+   * To access only the response body, use `deleteTicket()` instead.
    *
    * This method doesn't expect any request body.
    */
-  delete_2$Response(params: Delete_2$Params, context?: HttpContext): Observable<StrictHttpResponse<void>> {
-    return delete_2(this.http, this.rootUrl, params, context);
+  deleteTicket$Response(params: DeleteTicket$Params, context?: HttpContext): Observable<StrictHttpResponse<void>> {
+    return deleteTicket(this.http, this.rootUrl, params, context);
   }
 
   /**
@@ -827,18 +827,18 @@ export class ApiService extends BaseService {
    *
    *
    * This method provides access only to the response body.
-   * To access the full response (for headers, for example), `delete_2$Response()` instead.
+   * To access the full response (for headers, for example), `deleteTicket$Response()` instead.
    *
    * This method doesn't expect any request body.
    */
-  delete_2(params: Delete_2$Params, context?: HttpContext): Observable<void> {
-    return this.delete_2$Response(params, context).pipe(
+  deleteTicket(params: DeleteTicket$Params, context?: HttpContext): Observable<void> {
+    return this.deleteTicket$Response(params, context).pipe(
       map((r: StrictHttpResponse<void>): void => r.body)
     );
   }
 
-  /** Path part for operation `update_2()` */
-  static readonly Update_2Path = '/admin/Ticket/update/{id}';
+  /** Path part for operation `updateTicket()` */
+  static readonly UpdateTicketPath = '/admin/Ticket/update/{id}';
 
   /**
    * PUT admin/Ticket/update/{id}.
@@ -846,12 +846,12 @@ export class ApiService extends BaseService {
    *
    *
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
-   * To access only the response body, use `update_2()` instead.
+   * To access only the response body, use `updateTicket()` instead.
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  update_2$Response(params: Update_2$Params, context?: HttpContext): Observable<StrictHttpResponse<TicketSupportDto>> {
-    return update_2(this.http, this.rootUrl, params, context);
+  updateTicket$Response(params: UpdateTicket$Params, context?: HttpContext): Observable<StrictHttpResponse<TicketSupportDto>> {
+    return updateTicket(this.http, this.rootUrl, params, context);
   }
 
   /**
@@ -860,18 +860,18 @@ export class ApiService extends BaseService {
    *
    *
    * This method provides access only to the response body.
-   * To access the full response (for headers, for example), `update_2$Response()` instead.
+   * To access the full response (for headers, for example), `updateTicket$Response()` instead.
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  update_2(params: Update_2$Params, context?: HttpContext): Observable<TicketSupportDto> {
-    return this.update_2$Response(params, context).pipe(
+  updateTicket(params: UpdateTicket$Params, context?: HttpContext): Observable<TicketSupportDto> {
+    return this.updateTicket$Response(params, context).pipe(
       map((r: StrictHttpResponse<TicketSupportDto>): TicketSupportDto => r.body)
     );
   }
 
-  /** Path part for operation `getById_2()` */
-  static readonly GetById_2Path = '/admin/Ticket/{id}';
+  /** Path part for operation `getByIdTicket()` */
+  static readonly GetByIdTicketPath = '/admin/Ticket/{id}';
 
   /**
    * GET admin/Ticket/{id}.
@@ -879,12 +879,12 @@ export class ApiService extends BaseService {
    *
    *
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
-   * To access only the response body, use `getById_2()` instead.
+   * To access only the response body, use `getByIdTicket()` instead.
    *
    * This method doesn't expect any request body.
    */
-  getById_2$Response(params: GetById_2$Params, context?: HttpContext): Observable<StrictHttpResponse<TicketSupportDto>> {
-    return getById_2(this.http, this.rootUrl, params, context);
+  getByIdTicket$Response(params: GetByIdTicket$Params, context?: HttpContext): Observable<StrictHttpResponse<TicketSupportDto>> {
+    return getByIdTicket(this.http, this.rootUrl, params, context);
   }
 
   /**
@@ -893,18 +893,18 @@ export class ApiService extends BaseService {
    *
    *
    * This method provides access only to the response body.
-   * To access the full response (for headers, for example), `getById_2$Response()` instead.
+   * To access the full response (for headers, for example), `getByIdTicket$Response()` instead.
    *
    * This method doesn't expect any request body.
    */
-  getById_2(params: GetById_2$Params, context?: HttpContext): Observable<TicketSupportDto> {
-    return this.getById_2$Response(params, context).pipe(
+  getByIdTicket(params: GetByIdTicket$Params, context?: HttpContext): Observable<TicketSupportDto> {
+    return this.getByIdTicket$Response(params, context).pipe(
       map((r: StrictHttpResponse<TicketSupportDto>): TicketSupportDto => r.body)
     );
   }
 
-  /** Path part for operation `updateEtat()` */
-  static readonly UpdateEtatPath = '/admintech/Ticket/updateetat/{id}';
+  /** Path part for operation `updateEtatTicket()` */
+  static readonly UpdateEtatTicketPath = '/admintech/Ticket/updateetat/{id}';
 
   /**
    * PUT admintech/Ticket/updateetat/{id}.
@@ -912,12 +912,12 @@ export class ApiService extends BaseService {
    *
    *
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
-   * To access only the response body, use `updateEtat()` instead.
+   * To access only the response body, use `updateEtatTicket()` instead.
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  updateEtat$Response(params: UpdateEtat$Params, context?: HttpContext): Observable<StrictHttpResponse<TicketSupportDto>> {
-    return updateEtat(this.http, this.rootUrl, params, context);
+  updateEtatTicket$Response(params: UpdateEtatTicket$Params, context?: HttpContext): Observable<StrictHttpResponse<TicketSupportDto>> {
+    return updateEtatTicket(this.http, this.rootUrl, params, context);
   }
 
   /**
@@ -926,18 +926,18 @@ export class ApiService extends BaseService {
    *
    *
    * This method provides access only to the response body.
-   * To access the full response (for headers, for example), `updateEtat$Response()` instead.
+   * To access the full response (for headers, for example), `updateEtatTicket$Response()` instead.
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  updateEtat(params: UpdateEtat$Params, context?: HttpContext): Observable<TicketSupportDto> {
-    return this.updateEtat$Response(params, context).pipe(
+  updateEtatTicket(params: UpdateEtatTicket$Params, context?: HttpContext): Observable<TicketSupportDto> {
+    return this.updateEtatTicket$Response(params, context).pipe(
       map((r: StrictHttpResponse<TicketSupportDto>): TicketSupportDto => r.body)
     );
   }
 
-  /** Path part for operation `create_2()` */
-  static readonly Create_2Path = '/user/Ticket/create';
+  /** Path part for operation `createTicket()` */
+  static readonly CreateTicketPath = '/user/Ticket/create';
 
   /**
    * POST user/Ticket/create.
@@ -945,12 +945,12 @@ export class ApiService extends BaseService {
    *
    *
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
-   * To access only the response body, use `create_2()` instead.
+   * To access only the response body, use `createTicket()` instead.
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  create_2$Response(params: Create_2$Params, context?: HttpContext): Observable<StrictHttpResponse<TicketSupportDto>> {
-    return create_2(this.http, this.rootUrl, params, context);
+  createTicket$Response(params: CreateTicket$Params, context?: HttpContext): Observable<StrictHttpResponse<TicketSupportDto>> {
+    return createTicket(this.http, this.rootUrl, params, context);
   }
 
   /**
@@ -959,12 +959,12 @@ export class ApiService extends BaseService {
    *
    *
    * This method provides access only to the response body.
-   * To access the full response (for headers, for example), `create_2$Response()` instead.
+   * To access the full response (for headers, for example), `createTicket$Response()` instead.
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  create_2(params: Create_2$Params, context?: HttpContext): Observable<TicketSupportDto> {
-    return this.create_2$Response(params, context).pipe(
+  createTicket(params: CreateTicket$Params, context?: HttpContext): Observable<TicketSupportDto> {
+    return this.createTicket$Response(params, context).pipe(
       map((r: StrictHttpResponse<TicketSupportDto>): TicketSupportDto => r.body)
     );
   }

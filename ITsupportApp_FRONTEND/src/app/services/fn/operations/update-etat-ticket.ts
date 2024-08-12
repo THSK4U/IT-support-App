@@ -8,13 +8,15 @@ import { RequestBuilder } from '../../request-builder';
 
 import { TicketSupportDto } from '../../models/ticket-support-dto';
 
-export interface Create_2$Params {
+export interface UpdateEtatTicket$Params {
+  id: number;
       body: TicketSupportDto
 }
 
-export function create_2(http: HttpClient, rootUrl: string, params: Create_2$Params, context?: HttpContext): Observable<StrictHttpResponse<TicketSupportDto>> {
-  const rb = new RequestBuilder(rootUrl, create_2.PATH, 'post');
+export function updateEtatTicket(http: HttpClient, rootUrl: string, params: UpdateEtatTicket$Params, context?: HttpContext): Observable<StrictHttpResponse<TicketSupportDto>> {
+  const rb = new RequestBuilder(rootUrl, updateEtatTicket.PATH, 'put');
   if (params) {
+    rb.path('id', params.id, {});
     rb.body(params.body, 'application/json');
   }
 
@@ -28,4 +30,4 @@ export function create_2(http: HttpClient, rootUrl: string, params: Create_2$Par
   );
 }
 
-create_2.PATH = '/user/Ticket/create';
+updateEtatTicket.PATH = '/admintech/Ticket/updateetat/{id}';

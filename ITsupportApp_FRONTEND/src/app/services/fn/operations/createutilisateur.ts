@@ -6,14 +6,16 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { EquipementDto } from '../../models/equipement-dto';
+import { UtilisateurDto } from '../../models/utilisateur-dto';
 
-export interface GetAll_1$Params {
+export interface Createutilisateur$Params {
+      body: UtilisateurDto
 }
 
-export function getAll_1(http: HttpClient, rootUrl: string, params?: GetAll_1$Params, context?: HttpContext): Observable<StrictHttpResponse<Array<EquipementDto>>> {
-  const rb = new RequestBuilder(rootUrl, getAll_1.PATH, 'get');
+export function createutilisateur(http: HttpClient, rootUrl: string, params: Createutilisateur$Params, context?: HttpContext): Observable<StrictHttpResponse<UtilisateurDto>> {
+  const rb = new RequestBuilder(rootUrl, createutilisateur.PATH, 'post');
   if (params) {
+    rb.body(params.body, 'application/json');
   }
 
   return http.request(
@@ -21,9 +23,9 @@ export function getAll_1(http: HttpClient, rootUrl: string, params?: GetAll_1$Pa
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<Array<EquipementDto>>;
+      return r as StrictHttpResponse<UtilisateurDto>;
     })
   );
 }
 
-getAll_1.PATH = '/adminuser/Equipement';
+createutilisateur.PATH = '/admin/utilisateur/create';
