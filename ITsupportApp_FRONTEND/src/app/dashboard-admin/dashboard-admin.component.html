@@ -1,118 +1,14 @@
 <div class="page-container">
-  <div class="page-header">
-    <nav class="navbar navbar-expand-lg d-flex justify-content-between">
-      <div class="" id="navbarNav">
-        <ul class="navbar-nav" id="leftNav">
-          <li class="nav-item">
-            <a class="nav-link" id="sidebar-toggle" href="#"><i data-feather="arrow-left"></i></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Settings</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Help</a>
-          </li>
-        </ul>
-      </div>
-      <div class="logo">
-        <a class="navbar-brand" href="index-2.html"></a>
-      </div>
-
-
-      <div class="" id="headerNav">
-        <ul class="navbar-nav">
-
-
-          <li class="nav-item dropdown">
-            <a class="nav-link profile-dropdown" href="#" id="profileDropDown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="../../assets/images/avatars/profile-image-1.png" alt=""></a>
-            <div class="dropdown-menu dropdown-menu-end profile-drop-menu" aria-labelledby="profileDropDown">
-              <a class="dropdown-item" href="#"><i data-feather="log-out"></i>Logout</a>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </div>
-
+<app-navbar></app-navbar>
 
   <div class="page-sidebar">
-    <ul class="list-unstyled accordion-menu">
-      <li class="sidebar-title">
-        Main
-      </li>
-      <li class="active-page">
-        <a href="index-2.html"><i data-feather="home"></i>Dashboard</a>
-      </li>
-
-      <li class="sidebar-title">
-        Elements
-      </li>
-
-      <li>
-        <a href="index-2.html"><i data-feather="gift"></i>Plugins</a>
-      </li>
-      <li>
-        <a href="index-2.html"><i data-feather="gift"></i>Plugins</a>
-      </li>
-
-      <li>
-        <a href="index-2.html"><i data-feather="gift"></i>Plugins</a>
-      </li>
-      <li>
-        <a href="index-2.html"><i data-feather="edit"></i>Form</a>
-      </li>
-    </ul>
+<app-sidebar></app-sidebar>
   </div>
 
   <div class="page-content">
     <div class="main-wrapper">
-      <div class="row">
-        <div class="col-md-6 col-xl-3">
-          <div class="card stat-widget">
-            <div class="card-body">
-              <h5 class="card-title">New Customers</h5>
-              <h2>132</h2>
-              <p>From last week</p>
 
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-xl-3">
-          <div class="card stat-widget">
-            <div class="card-body">
-              <h5 class="card-title">Orders</h5>
-              <h2>287</h2>
-              <p>Orders in waitlist</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-xl-3">
-          <div class="card stat-widget">
-            <div class="card-body">
-              <h5 class="card-title">Monthly Profit</h5>
-              <h2>7.4K</h2>
-              <p>For last 30 days</p>
-
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-xl-3">
-          <div class="card stat-widget">
-            <div class="card-body">
-              <h5 class="card-title">Orders</h5>
-              <h2>87</h2>
-              <p>Orders in waitlist</p>
-
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-
-      </div>
+<app-statistique></app-statistique>
 
       <div class="row">
 
@@ -123,7 +19,7 @@
 
               <div class="transactions-list">
                 <div class="tr-item">
-                  <app-technicien></app-technicien>
+                 <app-list-technicien></app-list-technicien>
                 </div>
               </div>
 
