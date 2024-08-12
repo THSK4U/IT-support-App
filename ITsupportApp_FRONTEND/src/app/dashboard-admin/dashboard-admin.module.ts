@@ -10,6 +10,7 @@ import { StatistiqueComponent } from './statistique/statistique.component';
 import { ListTechnicienComponent } from './technicien/list-technicien/list-technicien.component';
 import {FormsModule} from "@angular/forms";
 import { FormAjoutertechnicienComponent } from './technicien/form-ajoutertechnicien/form-ajoutertechnicien.component';
+import { UtilisateurComponent } from './utilisateur/utilisateur.component';
 
 
 @NgModule({
@@ -20,16 +21,17 @@ import { FormAjoutertechnicienComponent } from './technicien/form-ajoutertechnic
     SidebarComponent,
     StatistiqueComponent,
     ListTechnicienComponent,
-    FormAjoutertechnicienComponent
+    FormAjoutertechnicienComponent,
+    UtilisateurComponent
   ],
   exports: [
     DashboardAdminComponent,
     TechnicienComponent
   ],
-    imports: [
-        CommonModule,
-        DashboardAdminRoutingModule,
-        FormsModule,
-    ]
+  imports: [
+    CommonModule,
+    DashboardAdminRoutingModule,
+    FormsModule,
+  ]
 })
 export class DashboardAdminModule { }

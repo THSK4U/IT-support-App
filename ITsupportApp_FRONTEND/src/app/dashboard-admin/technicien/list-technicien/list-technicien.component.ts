@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiService } from '../../../services/services/api.service';
 import {Technicien} from "../../../services/models/technicien";
+import {HttpClient} from "@angular/common/http";
+import {Observable} from "rxjs";
 
 
 @Component({
@@ -14,10 +16,13 @@ export class ListTechnicienComponent implements OnInit {
   techniciens: Technicien[] = [];
   showButton: boolean = false;
 
+  private apiUrl ="http://localhost:8088/admin/techniciens/delete";
+
 
   constructor(
     private technicienService: ApiService,
-    private router: Router
+    private router: Router,
+    private http:HttpClient
   ) {}
 
   ngOnInit(): void {
@@ -35,6 +40,9 @@ export class ListTechnicienComponent implements OnInit {
       }
     });
   }
+
+
+
 
   private checkpath() {
     const url = this.router.url;

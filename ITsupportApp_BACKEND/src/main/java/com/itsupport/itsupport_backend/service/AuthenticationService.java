@@ -24,7 +24,6 @@ public class AuthenticationService implements IAuthenticationService {
     private final PersonneRepository repository;
     private final UtilisateurRepository utilisateurRepository;
     private final TechnicienRepository technicienRepository;
-    private final TokenRepository tokenRepository;
     private final AdministrateurRepository administrateurRepository;
 //
         //Mapper
@@ -54,7 +53,6 @@ public class AuthenticationService implements IAuthenticationService {
 
         String jwt = jwtService.generateToken(user);
 
-        saveUserToken(jwt, user);
 
         return new AuthenticationResponse(jwt, "Utilisateur registration was successful");
     }
@@ -76,8 +74,6 @@ public class AuthenticationService implements IAuthenticationService {
 
         String jwt = jwtService.generateToken(user);
 
-        saveUserToken(jwt, user);
-
         return new AuthenticationResponse(jwt, "Technicien registration was successful");
     }
 
@@ -94,7 +90,6 @@ public class AuthenticationService implements IAuthenticationService {
 
         String jwt = jwtService.generateToken(user);
 
-        saveUserToken(jwt, user);
 
         return new AuthenticationResponse(jwt, "Administrateur registration was successful");
     }
@@ -110,16 +105,10 @@ public class AuthenticationService implements IAuthenticationService {
         Personne user = repository.findByUsername(request.getUsername()).orElseThrow();
         String jwt = jwtService.generateToken(user);
 
-        saveUserToken(jwt, user);
 
         return new AuthenticationResponse(jwt, "login was successful");
     }
 
 
-    private void saveUserToken(String jwt, Personne user) {
-        Token token = new Token();
-        token.setToken(jwt);
-        token.setUser(user);
-        tokenRepository.save(token);
-    }
+
 }

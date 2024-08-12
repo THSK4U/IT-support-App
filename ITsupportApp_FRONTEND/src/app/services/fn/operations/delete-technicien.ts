@@ -8,12 +8,13 @@ import { RequestBuilder } from '../../request-builder';
 
 
 export interface DeleteTechnicien$Params {
-  id: number;
+  id?: number;
 }
 
 export function deleteTechnicien(http: HttpClient, rootUrl: string, params: DeleteTechnicien$Params, context?: HttpContext): Observable<StrictHttpResponse<void>> {
   const rb = new RequestBuilder(rootUrl, deleteTechnicien.PATH, 'delete');
   if (params) {
+    console.log(rb)
     rb.path('id', params.id, {});
   }
 
@@ -25,6 +26,7 @@ export function deleteTechnicien(http: HttpClient, rootUrl: string, params: Dele
       return (r as HttpResponse<any>).clone({ body: undefined }) as StrictHttpResponse<void>;
     })
   );
+
 }
 
 deleteTechnicien.PATH = '/admin/techniciens/delete/{id}';

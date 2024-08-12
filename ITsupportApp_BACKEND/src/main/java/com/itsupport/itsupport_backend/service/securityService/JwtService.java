@@ -2,7 +2,6 @@ package com.itsupport.itsupport_backend.service.securityService;
 
 import com.itsupport.itsupport_backend.model.Entity.Personne;
 import org.springframework.beans.factory.annotation.Value;
-import com.itsupport.itsupport_backend.repository.TokenRepository;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.io.Decoders;
@@ -21,8 +20,6 @@ public class JwtService {
 
     @Value("${security.jwt.secret-key}")
     private String secretKey;
-
-    private final TokenRepository tokenRepository;
 
 
 

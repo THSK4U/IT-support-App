@@ -4,9 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {HttpClient, HttpClientModule} from "@angular/common/http";
-import {DashboardAdminComponent} from "./dashboard-admin/dashboard-admin.component";
 import {DashboardAdminModule} from "./dashboard-admin/dashboard-admin.module";
-import {TechnicienComponent} from "./dashboard-admin/technicien/technicien.component";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -17,6 +16,8 @@ import {TechnicienComponent} from "./dashboard-admin/technicien/technicien.compo
     AppRoutingModule,
     HttpClientModule,
     DashboardAdminModule,
+    BrowserAnimationsModule,
+
   ],
   providers: [
     HttpClient

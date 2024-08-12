@@ -17,7 +17,7 @@ import java.util.Set;
 @DiscriminatorValue(value = "Technicien")
 public class Technicien extends Personne{
 
-    @OneToMany(mappedBy = "technicien")
+    @OneToMany(mappedBy = "technicien",cascade = CascadeType.ALL)
     @JsonIgnore
     private List<TicketSupport> tickets;
 }
