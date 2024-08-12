@@ -16,7 +16,6 @@ export class ListTechnicienComponent implements OnInit {
   techniciens: Technicien[] = [];
   showButton: boolean = false;
 
-  private apiUrl ="http://localhost:8088/admin/techniciens/delete";
 
 
   constructor(
@@ -40,9 +39,6 @@ export class ListTechnicienComponent implements OnInit {
       }
     });
   }
-
-
-
 
   private checkpath() {
     const url = this.router.url;

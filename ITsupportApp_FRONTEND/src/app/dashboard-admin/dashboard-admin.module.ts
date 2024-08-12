@@ -11,6 +11,8 @@ import { ListTechnicienComponent } from './technicien/list-technicien/list-techn
 import {FormsModule} from "@angular/forms";
 import { FormAjoutertechnicienComponent } from './technicien/form-ajoutertechnicien/form-ajoutertechnicien.component';
 import { UtilisateurComponent } from './utilisateur/utilisateur.component';
+import { ListUtilisateurComponent } from './utilisateur/list-utilisateur/list-utilisateur.component';
+
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { UtilisateurComponent } from './utilisateur/utilisateur.component';
     StatistiqueComponent,
     ListTechnicienComponent,
     FormAjoutertechnicienComponent,
-    UtilisateurComponent
+    UtilisateurComponent,
+    ListUtilisateurComponent,
+
   ],
   exports: [
     DashboardAdminComponent,
