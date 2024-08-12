@@ -1,0 +1,1017 @@
+{
+  "openapi" : "3.1.0",
+  "info" : {
+    "title" : "ITsupportApp_BACKEND API",
+    "description" : "ITsupportApp_BACKEND API",
+    "version" : "1.0.0"
+  },
+  "servers" : [ {
+    "url" : "https://ITsupportApp_BACKEND"
+  } ],
+  "paths" : {
+    "/admin/techniciens" : {
+      "get" : {
+        "summary" : "GET admin/techniciens",
+        "operationId" : "getAllTechniciens",
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/TechnicienDTO"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/admin/techniciens/create" : {
+      "post" : {
+        "summary" : "POST admin/techniciens/create",
+        "operationId" : "createTechnicien",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/TechnicienDTO"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/TechnicienDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/admin/techniciens/delete/{id}" : {
+      "delete" : {
+        "summary" : "DELETE admin/techniciens/delete/{id}",
+        "operationId" : "deleteTechnicien",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          }
+        }
+      }
+    },
+    "/admin/techniciens/update/{id}" : {
+      "put" : {
+        "summary" : "PUT admin/techniciens/update/{id}",
+        "operationId" : "updateTechnicien",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/TechnicienDTO"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/TechnicienDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/admin/techniciens/{id}" : {
+      "get" : {
+        "summary" : "GET admin/techniciens/{id}",
+        "operationId" : "getTechnicienById",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/TechnicienDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/admin/utilisateur" : {
+      "get" : {
+        "summary" : "GET admin/utilisateur",
+        "operationId" : "getAllTechniciens",
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/UtilisateurDTO"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/admin/utilisateur/create" : {
+      "post" : {
+        "summary" : "POST admin/utilisateur/create",
+        "operationId" : "createTechnicien",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/UtilisateurDTO"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/UtilisateurDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/admin/utilisateur/delete/{id}" : {
+      "delete" : {
+        "summary" : "DELETE admin/utilisateur/delete/{id}",
+        "operationId" : "deleteTechnicien",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          }
+        }
+      }
+    },
+    "/admin/utilisateur/update/{id}" : {
+      "put" : {
+        "summary" : "PUT admin/utilisateur/update/{id}",
+        "operationId" : "updateTechnicien",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/UtilisateurDTO"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/UtilisateurDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/admin/utilisateur/{id}" : {
+      "get" : {
+        "summary" : "GET admin/utilisateur/{id}",
+        "operationId" : "getTechnicienById",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/UtilisateurDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/login" : {
+      "post" : {
+        "summary" : "POST login",
+        "operationId" : "login",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/PersonneDTO"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AuthenticationResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/admin/panne/create" : {
+      "post" : {
+        "summary" : "POST admin/panne/create",
+        "operationId" : "create",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/PanneDTO"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PanneDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/admin/panne/delete/{id}" : {
+      "delete" : {
+        "summary" : "DELETE admin/panne/delete/{id}",
+        "operationId" : "delete",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          }
+        }
+      }
+    },
+    "/admin/panne/update/{id}" : {
+      "put" : {
+        "summary" : "PUT admin/panne/update/{id}",
+        "operationId" : "update",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/PanneDTO"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PanneDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/admin/panne/{id}" : {
+      "get" : {
+        "summary" : "GET admin/panne/{id}",
+        "operationId" : "getById",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PanneDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/adminuser/panne" : {
+      "get" : {
+        "summary" : "GET adminuser/panne",
+        "operationId" : "getAll",
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/PanneDTO"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/admin/Equipement/create" : {
+      "post" : {
+        "summary" : "POST admin/Equipement/create",
+        "operationId" : "create",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/EquipementDTO"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/EquipementDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/admin/Equipement/delete/{id}" : {
+      "delete" : {
+        "summary" : "DELETE admin/Equipement/delete/{id}",
+        "operationId" : "delete",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          }
+        }
+      }
+    },
+    "/admin/Equipement/update/{id}" : {
+      "put" : {
+        "summary" : "PUT admin/Equipement/update/{id}",
+        "operationId" : "update",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/EquipementDTO"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/EquipementDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/admin/Equipement/{id}" : {
+      "get" : {
+        "summary" : "GET admin/Equipement/{id}",
+        "operationId" : "getById",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/EquipementDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/adminuser/Equipement" : {
+      "get" : {
+        "summary" : "GET adminuser/Equipement",
+        "operationId" : "getAll",
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/EquipementDTO"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/admin/Ticket" : {
+      "get" : {
+        "summary" : "GET admin/Ticket",
+        "operationId" : "getAll",
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/TicketSupportDTO"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/admin/Ticket/delete/{id}" : {
+      "delete" : {
+        "summary" : "DELETE admin/Ticket/delete/{id}",
+        "operationId" : "delete",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          }
+        }
+      }
+    },
+    "/admin/Ticket/update/{id}" : {
+      "put" : {
+        "summary" : "PUT admin/Ticket/update/{id}",
+        "operationId" : "update",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/TicketSupportDTO"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/TicketSupportDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/admin/Ticket/{id}" : {
+      "get" : {
+        "summary" : "GET admin/Ticket/{id}",
+        "operationId" : "getById",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/TicketSupportDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/admintech/Ticket/updateetat/{id}" : {
+      "put" : {
+        "summary" : "PUT admintech/Ticket/updateetat/{id}",
+        "operationId" : "updateEtat",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/TicketSupportDTO"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/TicketSupportDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/user/Ticket/create" : {
+      "post" : {
+        "summary" : "POST user/Ticket/create",
+        "operationId" : "create",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/TicketSupportDTO"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/TicketSupportDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/user/{username}" : {
+      "get" : {
+        "summary" : "GET user/{username}",
+        "operationId" : "getTicketsByUsername",
+        "parameters" : [ {
+          "name" : "username",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/TicketSupportDTO"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "TechnicienDTO" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "integer",
+            "format" : "int64"
+          },
+          "username" : {
+            "type" : "string"
+          },
+          "email" : {
+            "type" : "string"
+          },
+          "password" : {
+            "type" : "string"
+          },
+          "role" : {
+            "type" : "string",
+            "enum" : [ "ADMIN", "USER", "TECH" ]
+          }
+        }
+      },
+      "UtilisateurDTO" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "integer",
+            "format" : "int64"
+          },
+          "username" : {
+            "type" : "string"
+          },
+          "email" : {
+            "type" : "string"
+          },
+          "password" : {
+            "type" : "string"
+          },
+          "role" : {
+            "type" : "string",
+            "enum" : [ "ADMIN", "USER", "TECH" ]
+          }
+        }
+      },
+      "PersonneDTO" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "integer",
+            "format" : "int64"
+          },
+          "username" : {
+            "type" : "string"
+          },
+          "email" : {
+            "type" : "string"
+          },
+          "password" : {
+            "type" : "string"
+          },
+          "role" : {
+            "type" : "string",
+            "enum" : [ "ADMIN", "USER", "TECH" ]
+          }
+        }
+      },
+      "AuthenticationResponse" : {
+        "type" : "object",
+        "properties" : {
+          "jwt" : {
+            "type" : "string"
+          },
+          "message" : {
+            "type" : "string"
+          }
+        }
+      },
+      "PanneDTO" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "integer",
+            "format" : "int64"
+          },
+          "nom" : {
+            "type" : "string"
+          },
+          "description" : {
+            "type" : "string"
+          }
+        }
+      },
+      "EquipementDTO" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "integer",
+            "format" : "int64"
+          },
+          "nom" : {
+            "type" : "string"
+          },
+          "description" : {
+            "type" : "string"
+          },
+          "imageUrl" : {
+            "type" : "string"
+          },
+          "serialnumber" : {
+            "type" : "string"
+          },
+          "etat" : {
+            "type" : "string",
+            "enum" : [ "EN_SERVICE", "HORS_SERVICE" ]
+          },
+          "dateAcquisition" : {
+            "type" : "string",
+            "format" : "date-time"
+          }
+        }
+      },
+      "Technicien" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "integer",
+            "format" : "int64"
+          },
+          "username" : {
+            "type" : "string"
+          },
+          "email" : {
+            "type" : "string"
+          },
+          "password" : {
+            "type" : "string"
+          },
+          "role" : {
+            "type" : "string",
+            "enum" : [ "ADMIN", "USER", "TECH" ]
+          }
+        }
+      },
+      "Utilisateur" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "integer",
+            "format" : "int64"
+          },
+          "username" : {
+            "type" : "string"
+          },
+          "email" : {
+            "type" : "string"
+          },
+          "password" : {
+            "type" : "string"
+          },
+          "role" : {
+            "type" : "string",
+            "enum" : [ "ADMIN", "USER", "TECH" ]
+          }
+        }
+      },
+      "Panne" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "integer",
+            "format" : "int64"
+          },
+          "nom" : {
+            "type" : "string"
+          },
+          "description" : {
+            "type" : "string"
+          }
+        }
+      },
+      "Equipement" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "integer",
+            "format" : "int64"
+          },
+          "nom" : {
+            "type" : "string"
+          },
+          "imageurl" : {
+            "type" : "string"
+          },
+          "serialnumber" : {
+            "type" : "string"
+          },
+          "description" : {
+            "type" : "string"
+          },
+          "Etat" : {
+            "type" : "string",
+            "enum" : [ "EN_SERVICE", "HORS_SERVICE" ]
+          },
+          "dateAcquisition" : {
+            "type" : "string",
+            "format" : "date-time"
+          }
+        }
+      },
+      "TicketSupportDTO" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "integer",
+            "format" : "int64"
+          },
+          "description" : {
+            "type" : "string"
+          },
+          "dateCreation" : {
+            "type" : "string",
+            "format" : "date-time"
+          },
+          "etat" : {
+            "type" : "string",
+            "enum" : [ "A_FAIRE", "EN_COURS", "TERMINE" ]
+          },
+          "technicien" : {
+            "$ref" : "#/components/schemas/Technicien"
+          },
+          "utilisateur" : {
+            "$ref" : "#/components/schemas/Utilisateur"
+          },
+          "panne" : {
+            "$ref" : "#/components/schemas/Panne"
+          },
+          "equipement" : {
+            "$ref" : "#/components/schemas/Equipement"
+          }
+        }
+      }
+    }
+  }
+}
