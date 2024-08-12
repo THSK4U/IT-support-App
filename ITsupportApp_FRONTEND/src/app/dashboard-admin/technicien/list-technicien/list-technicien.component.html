@@ -1,0 +1,67 @@
+<div *ngIf="showButton">
+<div *ngFor="let technicien of techniciens" class="mb-3 d-flex justify-content-between align-items-center">
+  <div class="d-flex">
+    <div class="tr-icon tr-card-icon tr-card-bg-primary text-primary">
+      <i data-feather="tool"></i>
+    </div>
+    <div class="tr-text ms-3">
+      <h4>{{ technicien.username }}</h4>
+      <p>{{ technicien.email }}</p>
+    </div>
+  </div>
+
+  <div class="ms-auto">
+    <button *ngIf="showButton" class="btn btn-primary me-2">Modifier</button>
+    <button *ngIf="showButton" class="btn btn-danger">Delete</button>
+  </div>
+</div>
+</div>
+
+<div *ngIf="!showButton">
+<div *ngFor="let technicien of techniciens | slice:-5" class="mb-3 d-flex justify-content-between align-items-center">
+  <div class="d-flex">
+    <div class="tr-icon tr-card-icon tr-card-bg-primary text-primary">
+      <i data-feather="tool"></i>
+    </div>
+    <div class="tr-text ms-3">
+      <h4>{{ technicien.username }}</h4>
+      <p>{{ technicien.email }}</p>
+    </div>
+  </div>
+
+  <div class="ms-auto">
+    <button *ngIf="showButton" class="btn btn-primary me-2">Modifier</button>
+    <button *ngIf="showButton" class="btn btn-danger">Delete</button>
+  </div>
+</div>
+</div>
+
+
+<!-- Add/Edit Ticket Button -->
+<button class="btn btn-primary mt-3" (click)="toggleForm()">Add new ticket</button>
+<!-- Ticket Form -->
+<div class="card mt-4 custom-card" *ngIf="isFormVisible">
+  <div class="card-body">
+    <h5 class="card-title">Add new ticket</h5>
+    <form>
+      <div class="mb-3">
+        <label for="description" class="form-label">Description:</label>
+        <input type="text" class="form-control" id="description" [(ngModel)]="techniciens" name="description">
+      </div>
+      <div class="mb-3">
+        <label for="utilisateur" class="form-label">User ID:</label>
+        <input type="number" class="form-control" id="utilisateur" [(ngModel)]="ticket.utilisateur.id" name="utilisateur">
+      </div>
+      <div class="mb-3">
+        <label for="panne" class="form-label">Panne :</label>
+        <input type="number" class="form-control" id="panne" [(ngModel)]="ticket.panne.id" name="panne">
+      </div>
+      <div class="mb-3">
+        <label for="equipement" class="form-label">Equipment ID:</label>
+        <input type="number" class="form-control" id="equipement" [(ngModel)]="ticket.equipement.id" name="equipement">
+      </div>
+      <button type="button" class="btn btn-primary" (click)="saveTicket()">Save</button>
+      <button type="button" class="btn btn-secondary" (click)="toggleForm()">Cancel</button>
+    </form>
+  </div>
+</div>
