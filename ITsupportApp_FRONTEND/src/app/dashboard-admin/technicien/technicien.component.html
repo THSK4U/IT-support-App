@@ -1,9 +1,26 @@
-<div class="tr-company-name">
-  <div class="tr-icon tr-card-icon tr-card-bg-primary text-primary">
-    <i data-feather="tool"></i>
+<div class="page-container">
+  <app-navbar></app-navbar>
+
+  <div class="page-sidebar">
+    <app-sidebar></app-sidebar>
   </div>
-  <div class="tr-text">
-    <h4>Username</h4>
-    <p>Email@gmail.com</p>
+
+  <div class="page-content">
+    <div class="main-wrapper">
+
+      <div class="row">
+        <div class="col-sm-12 col-xl-12">
+          <div class="card card-body stat-widget">
+            <div class="card-title d-flex justify-content-between align-items-center">
+              <h5 class="">Les Techniciens</h5>
+              <button class="btn btn-outline-success">Ajouter Technicien</button>
+            </div>
+            <div class="transactions-list">
+                <app-list-technicien></app-list-technicien>
+            </div>
+          </div>
+        </div>
+      </div>
+
   </div>
 </div>
