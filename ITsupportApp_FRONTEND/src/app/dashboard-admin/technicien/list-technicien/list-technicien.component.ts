@@ -4,6 +4,9 @@ import { ApiService } from '../../../services/services/api.service';
 import {Technicien} from "../../../services/models/technicien";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
+import {ApiConfiguration} from "../../../services/api-configuration";
+import {deleteutilisateur, Deleteutilisateur$Params} from "../../../services/fn/operations/deleteutilisateur";
+import {deleteTechnicien, DeleteTechnicien$Params} from "../../../services/fn/operations/delete-technicien";
 
 
 @Component({
@@ -21,7 +24,9 @@ export class ListTechnicienComponent implements OnInit {
   constructor(
     private technicienService: ApiService,
     private router: Router,
-    private http:HttpClient
+    private http:HttpClient,
+    private apiConfig: ApiConfiguration
+
   ) {}
 
   ngOnInit(): void {
@@ -45,5 +50,17 @@ export class ListTechnicienComponent implements OnInit {
     this.showButton = url.includes('/Admin/Technicien');
   }
 
+  deleteTechnicien(id: number) {
+    const params: DeleteTechnicien$Params = {id: id};
+    deleteTechnicien(this.http, this.apiConfig.rootUrl, params).subscribe({
+      next: () => {
+        this.techniciens = this.techniciens.filter(p => p.id !== id);
+        console.log('Techniciens deleted successfully');
+      },
+      error: (err) => {
+        console.error('Error deleting:', err);
+      }
+    });
+  }
 
 }
