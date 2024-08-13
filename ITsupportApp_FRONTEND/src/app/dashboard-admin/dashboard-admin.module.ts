@@ -16,6 +16,7 @@ import { FormAjouterutilisateurComponent } from './utilisateur/form-ajouterutili
 import { PanneComponent } from './panne/panne.component';
 import { ListPanneComponent } from './panne/list-panne/list-panne.component';
 import { FormAjouterpanneComponent } from './panne/form-ajouterpanne/form-ajouterpanne.component';
+import { EquipementComponent } from './equipement/equipement.component';
 
 
 
@@ -34,6 +35,7 @@ import { FormAjouterpanneComponent } from './panne/form-ajouterpanne/form-ajoute
     PanneComponent,
     ListPanneComponent,
     FormAjouterpanneComponent,
+    EquipementComponent,
 
   ],
   exports: [

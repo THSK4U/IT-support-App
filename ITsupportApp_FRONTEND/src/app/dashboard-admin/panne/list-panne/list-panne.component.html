@@ -1,4 +1,4 @@
-<div *ngIf="!showButton">
+<div *ngIf="showButton">
   <div *ngFor="let panne of pannes" class="mb-3 d-flex justify-content-between align-items-center">
     <div class="d-flex">
       <div class="tr-icon tr-card-icon  tr-card-bg-danger text-danger">
@@ -10,10 +10,13 @@
       </div>
     </div>
 
+    <div class="ms-auto">
+      <button *ngIf="showButton" class="btn btn-danger" (click)="deletePanne(panne.id!)">Delete</button>
+    </div>
   </div>
 </div>
 
-<div *ngIf="showButton">
+<div *ngIf="!showButton">
   <div *ngFor="let panne of pannes | slice:-5" class="mb-3 d-flex justify-content-between align-items-center">
     <div class="d-flex">
       <div class="tr-icon tr-card-icon  tr-card-bg-danger text-danger">
@@ -25,9 +28,5 @@
       </div>
     </div>
 
-    <div class="ms-auto">
-      <button *ngIf="showButton" class="btn btn-primary me-2">Modifier</button>
-      <button *ngIf="showButton" class="btn btn-danger">Delete</button>
-    </div>
   </div>
 </div>
