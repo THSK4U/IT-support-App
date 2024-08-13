@@ -1,1 +1,33 @@
-<p>list-panne works!</p>
+<div *ngIf="!showButton">
+  <div *ngFor="let panne of pannes" class="mb-3 d-flex justify-content-between align-items-center">
+    <div class="d-flex">
+      <div class="tr-icon tr-card-icon  tr-card-bg-danger text-danger">
+        <i data-feather="alert-triangle"></i>
+      </div>
+      <div class="tr-text ms-3">
+        <h4>{{ panne.nom }}</h4>
+        <p>{{ panne.description }}</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div *ngIf="showButton">
+  <div *ngFor="let panne of pannes | slice:-5" class="mb-3 d-flex justify-content-between align-items-center">
+    <div class="d-flex">
+      <div class="tr-icon tr-card-icon  tr-card-bg-danger text-danger">
+        <i data-feather="alert-triangle"></i>
+      </div>
+      <div class="tr-text ms-3">
+        <h4>{{ panne.nom }}</h4>
+        <p>{{ panne.description }}</p>
+      </div>
+    </div>
+
+    <div class="ms-auto">
+      <button *ngIf="showButton" class="btn btn-primary me-2">Modifier</button>
+      <button *ngIf="showButton" class="btn btn-danger">Delete</button>
+    </div>
+  </div>
+</div>

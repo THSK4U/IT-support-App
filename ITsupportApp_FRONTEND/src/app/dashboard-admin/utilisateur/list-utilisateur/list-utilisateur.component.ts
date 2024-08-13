@@ -23,11 +23,11 @@ export class ListUtilisateurComponent implements OnInit{
   ) {}
 
   ngOnInit(): void {
-    this.AllTechnicienComponents();
+    this.AllUtilisateurComponents();
     this.checkpath();
   }
 
-  private AllTechnicienComponents(): void {
+  private AllUtilisateurComponents(): void {
     this.utilisateurService.getAllutilisateur().subscribe({
       next: (user) => {
         this.utilisateur = user;
