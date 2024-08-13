@@ -5,6 +5,7 @@ import {TechnicienComponent} from "./technicien/technicien.component";
 import {UtilisateurComponent} from "./utilisateur/utilisateur.component";
 import {PanneComponent} from "./panne/panne.component";
 import {FormAjouterutilisateurComponent} from "./utilisateur/form-ajouterutilisateur/form-ajouterutilisateur.component";
+import {EquipementComponent} from "./equipement/equipement.component";
 
 const routes: Routes = [
   {
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: 'Panne',
     component: PanneComponent
+  },
+  {
+    path: 'Equipement',
+    component: EquipementComponent
   }
 ];
 

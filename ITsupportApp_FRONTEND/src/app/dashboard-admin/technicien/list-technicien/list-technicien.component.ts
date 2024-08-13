@@ -3,9 +3,7 @@ import { Router } from '@angular/router';
 import { ApiService } from '../../../services/services/api.service';
 import {Technicien} from "../../../services/models/technicien";
 import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
 import {ApiConfiguration} from "../../../services/api-configuration";
-import {deleteutilisateur, Deleteutilisateur$Params} from "../../../services/fn/operations/deleteutilisateur";
 import {deleteTechnicien, DeleteTechnicien$Params} from "../../../services/fn/operations/delete-technicien";
 
 
@@ -18,8 +16,6 @@ export class ListTechnicienComponent implements OnInit {
 
   techniciens: Technicien[] = [];
   showButton: boolean = false;
-
-
 
   constructor(
     private technicienService: ApiService,

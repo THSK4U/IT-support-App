@@ -1,0 +1,48 @@
+<div class="card table-widget">
+  <div class="card-body">
+    <h5 class="card-title">Recent Orders</h5>
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">Nom</th>
+          <th scope="col">Description</th>
+          <th scope="col">Date de Acquisition</th>
+          <th scope="col">Status</th>
+        </tr>
+        </thead>
+        <tbody *ngIf="!showButton" >
+        <tr *ngFor="let equipement of equipement">
+          <th scope="row"><img src="{{ equipement.imageUrl }}" alt=""></th>
+          <td>{{ equipement.nom }}</td>
+          <td>{{ equipement.description }}</td>
+          <td>{{ equipement.dateAcquisition | date }}</td>
+          <td>{{ equipement.serialnumber}}</td>
+          <td><span class="badge bg-success">{{ equipement.etat }}</span></td>
+
+          <td>
+            <button *ngIf="showButton" class="btn btn-danger" (click)="deleteequipement(equipement.id!)">Delete</button>
+          </td>
+        </tr>
+
+        </tbody>
+        <tbody *ngIf="showButton" >
+        <tr *ngFor="let equipement of equipement">
+          <th scope="row"><img src="{{ equipement.imageUrl }}" alt=""></th>
+          <td>{{ equipement.nom }}</td>
+          <td>{{ equipement.description }}</td>
+          <td>{{ equipement.dateAcquisition | date }}</td>
+          <td>{{ equipement.serialnumber}}</td>
+          <td><span class="badge bg-success">{{ equipement.etat }}</span></td>
+
+          <td>
+            <button *ngIf="showButton" class="btn btn-danger" (click)="deleteequipement(equipement.id!)">Delete</button>
+          </td>
+        </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
