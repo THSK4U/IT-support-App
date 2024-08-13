@@ -1,0 +1,15 @@
+<div class="card-body">
+  <form>
+    <div class="mb-3">
+      <label for="nom" class="form-label">Nom:</label>
+      <input type="text" class="form-control" id="nom" [(ngModel)]="panne.nom" name="nom">
+    </div>
+
+    <div class="mb-3">
+      <label for="Description" class="form-label">Description:</label>
+      <textarea type="text" class="form-control" id="Description" [(ngModel)]="panne.description" name="Description"></textarea>
+    </div>
+
+    <button type="button" class="btn btn-outline-success" (click)="save()">Save</button>
+  </form>
+</div>
