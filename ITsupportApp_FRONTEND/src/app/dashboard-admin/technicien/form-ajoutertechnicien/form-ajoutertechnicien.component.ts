@@ -3,8 +3,6 @@ import {Technicien} from "../../../services/models/technicien";
 import {TechnicienDto} from "../../../services/models/technicien-dto";
 import {ApiService} from "../../../services/services/api.service";
 import {Router} from "@angular/router";
-import {PersonneDto} from "../../../services/models/personne-dto";
-import {Utilisateur} from "../../../services/models/utilisateur";
 
 @Component({
   selector: 'app-form-ajoutertechnicien',
@@ -13,22 +11,22 @@ import {Utilisateur} from "../../../services/models/utilisateur";
 })
 export class FormAjoutertechnicienComponent{
 
-  user : Utilisateur = { email: '', password: '', username: '' };
-  Utilisateur: Utilisateur[] = [];
+  technicien : TechnicienDto = { email: '', password: '', username: '' };
+  techniciens: Technicien[] = [];
   hidePassword = true;
 
   constructor(
-  private UtilisateurServices: ApiService,
+  private Services: ApiService,
   private router: Router
   ) {
   }
   save() {
-  this.UtilisateurServices.createutilisateur({
-    body: this.user
+  this.Services.createTechnicien({
+    body: this.technicien
   }).subscribe({
     next: (response) => {
-      console.log('Utilisateurs', response);
-      this.Utilisateur.push(response);
+      console.log('Technicien', response);
+      this.techniciens.push(response);
       this.rout();
     }
   })
@@ -41,7 +39,7 @@ export class FormAjoutertechnicienComponent{
 
 
   private rout() {
-    this.router.navigate(['Admin/Utilisateur'])
+    this.router.navigate(['Admin/Technicien'])
       .then(() => {
         window.location.reload();
       });

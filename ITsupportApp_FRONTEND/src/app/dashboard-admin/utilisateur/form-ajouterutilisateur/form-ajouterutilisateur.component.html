@@ -1,1 +1,25 @@
-<p>form-ajouterutilisateur works!</p>
+<div class="card-body">
+  <form>
+    <div class="mb-3">
+      <label for="nom" class="form-label">Nom:</label>
+      <input type="text" class="form-control" id="nom" [(ngModel)]="user.username" name="nom">
+    </div>
+
+    <div class="mb-3">
+      <label for="Email" class="form-label">Email:</label>
+      <input type="email" class="form-control" id="Email" [(ngModel)]="user.email" name="Email">
+    </div>
+
+    <div class="mb-3">
+      <label for="password" class="form-label">Password:</label>
+      <div class="input-group">
+        <input type="password" class="form-control" [type]="hidePassword ? 'password' : 'text'" [(ngModel)]="user.password" name="password" id="password">
+        <button type="button" class="btn btn-outline-secondary" (click)="togglePasswordVisibility()">
+          <i class="fas" [ngClass]="hidePassword ? 'fa-eye-slash' : 'fa-eye'"></i>
+        </button>
+      </div>
+    </div>
+
+    <button type="button" class="btn btn-outline-success" (click)="save()">Save</button>
+  </form>
+</div>
