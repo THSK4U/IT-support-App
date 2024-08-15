@@ -18,6 +18,7 @@ export class ListPanneComponent implements OnInit{
 
   pannes: PanneDto[] = [];
   showButton: boolean = false;
+  number = this.pannes.length
 
   constructor(
     private panneService: ApiService,

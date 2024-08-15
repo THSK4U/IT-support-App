@@ -46,7 +46,10 @@ import { FormUpdateEquipementComponent } from './equipement/form-update-equipeme
   ],
   exports: [
     DashboardAdminComponent,
-    TechnicienComponent
+    TechnicienComponent,
+    NavbarComponent,
+    StatistiqueComponent,
+    ListEquipementComponent
   ],
   imports: [
     CommonModule,

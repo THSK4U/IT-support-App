@@ -42,14 +42,14 @@ public class SecurityConfig {
                 //2 Configure les règles d'autorisation des requêtes HTTP
                 .authorizeHttpRequests(
                         req->req
-                        .requestMatchers("/login/**", "/**").permitAll()
-//                        .requestMatchers("/admin/**","/adminuser/**", "/admintech/**").hasAuthority("ADMIN")
-//
-//                        .requestMatchers("/technician/**", "/admintech/**").hasAuthority("TECH")
-//
-//                        .requestMatchers("/user/**","/adminuser/**").hasAuthority("USER")
-//                    // Exige une authentification pour toute autre requête non spécifiée
-//                        .anyRequest().authenticated()
+                        .requestMatchers("/login/**").permitAll()
+                        .requestMatchers("/admin/**","/adminuser/**", "/admintech/**").hasAuthority("ADMIN")
+
+                        .requestMatchers("/technician/**", "/admintech/**").hasAuthority("TECH")
+
+                        .requestMatchers("/user/**","/adminuser/**").hasAuthority("USER")
+                    // Exige une authentification pour toute autre requête non spécifiée
+                        .anyRequest().authenticated()
                 )
                 //3
                 .userDetailsService(ServiceImp)

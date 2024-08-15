@@ -22,13 +22,23 @@ export class LoginComponent {
   ) {}
 
   Login() {
-  this.errorMsg=[]; //return msg sur null
+    this.errorMsg=[]; //return msg sur null
   this.authentication.login$Response({
     body: this.authRequirest
   }).subscribe({
     next: (result) => {
       this.tokenService.token = result.body.jwt as string
-      this.router.navigate(['Admin'])
+
+      const role = this.tokenService.getRoleFromJwt(this.tokenService.token);
+      if (role === 'ADMIN') {
+        this.router.navigate(['/Admin']);
+      } else if (role === 'TECH') {
+        this.router.navigate(['/Technician']);
+      } else if (role === 'USER') {
+        this.router.navigate(['/Utilisateur']);
+      } else {
+        this.router.navigate(['/login']);
+      }
     },
     error: err => {
       console.log(err);
