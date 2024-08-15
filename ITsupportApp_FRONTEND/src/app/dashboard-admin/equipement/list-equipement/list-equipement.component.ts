@@ -7,6 +7,7 @@ import {ApiConfiguration} from "../../../services/api-configuration";
 import {deleteutilisateur, Deleteutilisateur$Params} from "../../../services/fn/operations/deleteutilisateur";
 import {EquipementDto} from "../../../services/models/equipement-dto";
 import {deleteequipement, Deleteequipement$Params} from "../../../services/fn/operations/deleteequipement";
+import {GetByIdequipement$Params} from "../../../services/fn/operations/get-by-idequipement";
 
 @Component({
   selector: 'app-list-equipement',
@@ -18,6 +19,14 @@ export class ListEquipementComponent implements OnInit{
   equipement: EquipementDto[] = [];
   showButton: boolean = false;
 
+  eq: EquipementDto = {
+    dateAcquisition: '',
+    description: '',
+    imageUrl: '',
+    nom: '',
+    serialnumber: '',
+    etat: 'EN_SERVICE'
+  };
 
 
   constructor(
@@ -58,6 +67,26 @@ export class ListEquipementComponent implements OnInit{
       },
       error: (err) => {
         console.error('Error deleting:', err);
+      }
+    });
+  }
+
+  selectedEquipementId!: number;
+
+  openUpdateModal(id: number = 0) {
+    this.selectedEquipementId = id;
+    this.fetchEquipementById(this.selectedEquipementId)
+  }
+
+  private fetchEquipementById(id: number): void {
+    const params: GetByIdequipement$Params = { id };
+    this.Service.getByIdequipement(params).subscribe({
+      next: (equipements: EquipementDto) => {
+        this.eq = equipements;
+        console.error(equipements);
+      },
+      error: (err) => {
+        console.error('Error fetching Equipement:', err);
       }
     });
   }

@@ -1,6 +1,6 @@
 <div class="card table-widget">
   <div class="card-body">
-    <h5 class="card-title">Recent Orders</h5>
+    <h5 class="card-title" *ngIf="!showButton">Equipement récentes</h5>
     <div class="table-responsive">
       <table class="table">
         <thead>
@@ -9,24 +9,31 @@
           <th scope="col">Nom</th>
           <th scope="col">Description</th>
           <th scope="col">Date de Acquisition</th>
+          <th scope="col">Serial Number</th>
           <th scope="col">Status</th>
         </tr>
         </thead>
         <tbody *ngIf="!showButton" >
-        <tr *ngFor="let equipement of equipement">
+        <tr *ngFor="let equipement of equipement  | slice: -5">
           <th scope="row"><img src="{{ equipement.imageUrl }}" alt=""></th>
           <td>{{ equipement.nom }}</td>
           <td>{{ equipement.description }}</td>
           <td>{{ equipement.dateAcquisition | date }}</td>
           <td>{{ equipement.serialnumber}}</td>
-          <td><span class="badge bg-success">{{ equipement.etat }}</span></td>
-
           <td>
-            <button *ngIf="showButton" class="btn btn-danger" (click)="deleteequipement(equipement.id!)">Delete</button>
+  <span class="badge" [ngClass]="{
+    'bg-success': equipement.etat === 'EN_SERVICE',
+    'bg-danger': equipement.etat === 'HORS_SERVICE'
+  }">
+    {{ equipement.etat }}
+  </span>
           </td>
+
+
         </tr>
 
         </tbody>
+
         <tbody *ngIf="showButton" >
         <tr *ngFor="let equipement of equipement">
           <th scope="row"><img src="{{ equipement.imageUrl }}" alt=""></th>
@@ -37,12 +44,28 @@
           <td><span class="badge bg-success">{{ equipement.etat }}</span></td>
 
           <td>
+            <button *ngIf="showButton" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#upModal" (click)="openUpdateModal(equipement.id)">Update</button>
             <button *ngIf="showButton" class="btn btn-danger" (click)="deleteequipement(equipement.id!)">Delete</button>
           </td>
         </tr>
 
         </tbody>
       </table>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="upModal" tabindex="-1" aria-labelledby="upModal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="upModalLabel" >Update Equipement: {{ eq.nom }}</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <app-form-update-equipement [id]="selectedEquipementId" [eq]="eq"></app-form-update-equipement>
+        </div>
+      </div>
     </div>
   </div>
 </div>
