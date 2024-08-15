@@ -1,0 +1,20 @@
+<form class="card-body" (ngSubmit)="save()">
+
+  <div class="mb-3">
+    <label for="description" class="form-label">Description:</label>
+    <textarea class="form-control" id="description" [(ngModel)]="ticket.description" name="description" required></textarea>
+  </div>
+
+  <div class="mb-3">
+    <label for="equipement" class="form-label">Équipement ID:</label>
+    <input type="number" class="form-control" id="equipement" [(ngModel)]="ticket.equipement.id" name="equipement" required />
+  </div>
+
+  <div class="mb-3">
+    <label for="panne" class="form-label">Panne ID:</label>
+    <input type="number" class="form-control" id="panne" [(ngModel)]="ticket.panne.id" name="panne" required />
+  </div>
+
+
+  <button type="submit" class="btn btn-outline-success">Enregistrer le ticket</button>
+</form>

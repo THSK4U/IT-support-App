@@ -6,11 +6,11 @@ import { Technicien } from '../models/technicien';
 import { Utilisateur } from '../models/utilisateur';
 export interface TicketSupportDto {
   dateCreation?: string;
-  description?: string;
-  equipement?: Equipement;
-  etat?: 'A_FAIRE' | 'EN_COURS' | 'TERMINE';
+  description: string;
+  equipement: Equipement;
+  etat: 'A_FAIRE' | 'EN_COURS' | 'TERMINE';
   id?: number;
-  panne?: Panne;
-  technicien?: Technicien;
-  utilisateur?: Utilisateur;
+  panne: Panne;
+  technicien: Technicien ;
+  utilisateur: Utilisateur;
 }

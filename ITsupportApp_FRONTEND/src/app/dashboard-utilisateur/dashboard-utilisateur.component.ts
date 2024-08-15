@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {TokenService} from "../services/token/token.service";
 
 @Component({
   selector: 'app-dashboard-utilisateur',
@@ -7,4 +8,13 @@ import { Component } from '@angular/core';
 })
 export class DashboardUtilisateurComponent {
 
+  constructor(
+    private service: TokenService,
+  ) {
+  }
+
+  logout() {
+    this.service.logout();
+
+  }
 }

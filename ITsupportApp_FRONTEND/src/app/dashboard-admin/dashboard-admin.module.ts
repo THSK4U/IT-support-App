@@ -49,7 +49,8 @@ import { FormUpdateEquipementComponent } from './equipement/form-update-equipeme
     TechnicienComponent,
     NavbarComponent,
     StatistiqueComponent,
-    ListEquipementComponent
+    ListEquipementComponent,
+    SidebarComponent
   ],
   imports: [
     CommonModule,

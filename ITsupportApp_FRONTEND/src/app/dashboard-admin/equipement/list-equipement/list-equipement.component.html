@@ -22,11 +22,9 @@
           <td>{{ equipement.serialnumber}}</td>
           <td>
   <span class="badge" [ngClass]="{
-    'bg-success': equipement.etat === 'EN_SERVICE',
-    'bg-danger': equipement.etat === 'HORS_SERVICE'
-  }">
-    {{ equipement.etat }}
-  </span>
+            'bg-danger': equipement.etat === 'HORS_SERVICE',
+            'bg-success': equipement.etat === 'EN_SERVICE'
+          }">{{ equipement.etat }}</span>
           </td>
 
 

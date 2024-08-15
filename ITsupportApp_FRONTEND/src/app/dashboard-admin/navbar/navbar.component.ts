@@ -1,8 +1,3 @@
-
-
-
-
-
 import { Component } from '@angular/core';
 import {TokenService} from "../../services/token/token.service";
 

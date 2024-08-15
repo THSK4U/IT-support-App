@@ -1,10 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {Utilisateur} from "../../../services/models/utilisateur";
 import {ApiService} from "../../../services/services/api.service";
 import {Router} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
 import {ApiConfiguration} from "../../../services/api-configuration";
-import {deleteutilisateur, Deleteutilisateur$Params} from "../../../services/fn/operations/deleteutilisateur";
 import {EquipementDto} from "../../../services/models/equipement-dto";
 import {deleteequipement, Deleteequipement$Params} from "../../../services/fn/operations/deleteequipement";
 import {GetByIdequipement$Params} from "../../../services/fn/operations/get-by-idequipement";

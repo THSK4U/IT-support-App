@@ -1,0 +1,35 @@
+<div class="card table-widget">
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">Date de création</th>
+      <th scope="col">Description</th>
+      <th scope="col">Équipement</th>
+      <th scope="col">État</th>
+      <th scope="col">Panne</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let ticket of ticket; let i = index">
+      <td>{{ ticket.dateCreation | date }}</td>
+      <td>{{ ticket.description }}</td>
+      <td>{{ ticket.equipement.nom }}</td>
+      <td>
+          <span class="badge" [ngClass]="{
+            'bg-danger': ticket.etat === 'A_FAIRE',
+            'bg-warning': ticket.etat === 'EN_COURS',
+            'bg-success': ticket.etat === 'TERMINE'
+          }">{{ ticket.etat }}</span>
+      </td>
+      <td>{{ ticket.panne.nom }}</td>
+
+    </tr>
+    </tbody>
+  </table>
+
+
+</div>
+</div>
+</div>

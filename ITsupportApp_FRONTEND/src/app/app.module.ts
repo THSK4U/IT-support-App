@@ -11,6 +11,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {TokenService} from "./services/token/token.service";
 import {AuthInterceptor} from "./auth-interceptor.interceptor";
 import { DashboardUtilisateurComponent } from './dashboard-utilisateur/dashboard-utilisateur.component';
+import {DashboardUtilisateurModule} from "./dashboard-utilisateur/dashboard-utilisateur.module";
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { DashboardUtilisateurComponent } from './dashboard-utilisateur/dashboard
     BrowserAnimationsModule,
     ReactiveFormsModule,
     FormsModule,
+    DashboardUtilisateurModule,
 
 
   ],
