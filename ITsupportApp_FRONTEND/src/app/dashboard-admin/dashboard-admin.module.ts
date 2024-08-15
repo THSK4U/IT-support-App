@@ -19,6 +19,7 @@ import { FormAjouterpanneComponent } from './panne/form-ajouterpanne/form-ajoute
 import { EquipementComponent } from './equipement/equipement.component';
 import { ListEquipementComponent } from './equipement/list-equipement/list-equipement.component';
 import { FormAjouterequipementComponent } from './equipement/form-ajouterequipement/form-ajouterequipement.component';
+import { FormUpdateEquipementComponent } from './equipement/form-update-equipement/form-update-equipement.component';
 
 
 
@@ -40,6 +41,7 @@ import { FormAjouterequipementComponent } from './equipement/form-ajouterequipem
     EquipementComponent,
     ListEquipementComponent,
     FormAjouterequipementComponent,
+    FormUpdateEquipementComponent,
 
   ],
   exports: [

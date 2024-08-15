@@ -6,6 +6,7 @@ import {UtilisateurComponent} from "./utilisateur/utilisateur.component";
 import {PanneComponent} from "./panne/panne.component";
 import {FormAjouterutilisateurComponent} from "./utilisateur/form-ajouterutilisateur/form-ajouterutilisateur.component";
 import {EquipementComponent} from "./equipement/equipement.component";
+import {LoginComponent} from "../login/login.component";
 
 const routes: Routes = [
   {

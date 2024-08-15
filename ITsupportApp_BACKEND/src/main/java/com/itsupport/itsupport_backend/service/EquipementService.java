@@ -60,7 +60,7 @@ public class EquipementService implements IEquipementService {
             ticket.setNom(DTO.getNom());
             ticket.setDescription(DTO.getDescription());
             ticket.setSerialnumber(DTO.getSerialnumber());
-            ticket.setImageurl(DTO.getImageUrl());
+            ticket.setImageUrl(DTO.getImageUrl());
             ticket.setEtat(DTO.getEtat());
 
             Equipement updated = Repository.save(ticket);

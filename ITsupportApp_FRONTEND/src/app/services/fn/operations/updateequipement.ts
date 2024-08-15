@@ -10,7 +10,7 @@ import { EquipementDto } from '../../models/equipement-dto';
 
 export interface Updateequipement$Params {
   id: number;
-      body: EquipementDto
+      body?: EquipementDto
 }
 
 export function updateequipement(http: HttpClient, rootUrl: string, params: Updateequipement$Params, context?: HttpContext): Observable<StrictHttpResponse<EquipementDto>> {

@@ -20,7 +20,7 @@ public class Equipement {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nom;
-    private String imageurl;
+    private String imageUrl;
     private String serialnumber;
     private String description;
     @Enumerated(EnumType.STRING)

@@ -6,10 +6,13 @@ import { AppComponent } from './app.component';
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {DashboardAdminModule} from "./dashboard-admin/dashboard-admin.module";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoginComponent } from './login/login.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
     AppComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -17,6 +20,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     DashboardAdminModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
+    FormsModule,
 
   ],
   providers: [
